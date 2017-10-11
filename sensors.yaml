@@ -1,0 +1,87 @@
+  - platform: darksky
+    api_key: !secret darksky_api_key
+    monitored_conditions:
+      - temperature
+      - temperature_max
+      - temperature_min
+   
+  - platform: arlo
+    monitored_conditions:
+      - captured_today
+      - last_capture
+      - total_cameras
+
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+      - 'date_time'
+      - 'time_date'
+
+  - platform: mqtt
+    name: Garage Temp
+    state_topic: "smartthings/Garage Motion/temperature"
+    device_class: temperature
+    unit_of_measurement: "°F"
+    retain: true
+    icon: mdi:thermometer
+    
+  - platform: mqtt
+    name: Garage Humidity
+    state_topic: "smartthings/Garage Motion/humidity"
+    unit_of_measurement: "%"
+    retain: true
+    
+  - platform: mqtt
+    name: Office Temp
+    state_topic: "smartthings/Office Motion/temperature"
+    device_class: temperature
+    unit_of_measurement: "°F"
+    retain: true
+    icon: mdi:thermometer
+    
+  - platform: mqtt
+    name: Office Humidity
+    state_topic: "smartthings/Office Motion/humidity"
+    unit_of_measurement: "%"
+    retain: true
+
+  - platform: mqtt
+    name: Energy
+    state_topic: "smartthings/power meter/energy"
+    unit_of_measurement: "kWh"
+    retain: true
+    
+  - platform: mqtt
+    name: Volts
+    state_topic: "smartthings/power meter/voltage"
+    unit_of_measurement: "V"
+    retain: true
+    
+      
+  - platform: template
+    sensors:
+      dad_garage_door_status:
+        friendly_name: 'State of Garage Door'
+        value_template: '{{ states.cover.garage_door_opener.state }}'
+      dad_garage_door_time_in_state:
+        friendly_name: 'Since'
+        entity_id:
+          - sensor.time
+        value_template: '{{relative_time(states.cover.garage_door_opener.last_changed)}}'
+      mom_garage_door_status:
+        friendly_name: 'State of Garage Door'
+        value_template: '{{ states.cover.garage_door_opener_right.state }}'
+      mom_garage_door_time_in_state:
+        friendly_name: 'Since'
+        entity_id:
+          - sensor.time
+        value_template: '{{relative_time(states.cover.garage_door_opener_right.last_changed)}}'
+      floorplan_date:
+        friendly_name: 'FP_Date'
+        value_template: 
+          '{{now().strftime("%a")}}, {{now().strftime("%b")}} {{now().strftime("%d")}}'
+      floorplan_time:
+        friendly_name: 'FP_Time'
+        value_template: 
+          '{{now().strftime("%I")}}:{{now().strftime("%M")}} {{now().strftime("%p")}}'

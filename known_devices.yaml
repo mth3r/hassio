@@ -1,0 +1,27 @@
+
+mhertz_iphone:
+  hide_if_away: false
+  icon:
+  mac:
+  name: Toby
+  picture:
+  track: true
+  vendor:
+
+mhertz_mlu_iphone:
+  hide_if_away: false
+  icon:
+  mac:
+  name: MaryLu
+  picture:
+  track: true
+  vendor:
+
+mhertz_jlu_iphone:
+  hide_if_away: false
+  icon:
+  mac:
+  name: Jackie
+  picture:
+  track: true
+  vendor:
