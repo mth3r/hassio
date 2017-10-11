@@ -1,0 +1,131 @@
+binary_sensor.floorplan:
+  custom_ui_state_card: floorplan
+  config:
+    name: Demo Floorplan
+    image: /local/custom_ui/floorplan/floorplan.svg
+    stylesheet: /local/custom_ui/floorplan/floorplan.css
+    hide_app_toolbar:
+    last_motion_entity: sensor.template_last_motion
+    last_motion_class: last-motion
+    groups:
+    - name: Sensors
+      entities:
+      - sensor.netatmo_outdoor_temperature
+      - sensor.netatmo_main_level_temperature
+      - sensor.dark_sky_temperature
+      - sensor.garage_temp
+      - sensor.office_temp
+      class_template: " var temp = parseFloat(entity.state.replace(\"\xB0\", \"\"\
+        )); if (temp < 40) return \"temp-low\"; else if (temp < 80) return \"temp-medium\"\
+        ; else return \"temp-high\"; "
+    - name: Lights
+      entities:
+      - switch.back_flood
+      - switch.front_porch
+      - switch.piano_back
+      - switch.piano_front
+      - switch.sunroom
+      - switch.kitchen_front
+      - switch.dining_room
+      - switch.kitchen_patio
+      - switch.sunroom_flood
+      states:
+      - state: 'on'
+        class: light-on
+      - state: 'off'
+        class: light-off
+      action:
+        domain: homeassistant
+        service: toggle
+    - name: Cameras
+      entities:
+      - camera.front_door
+      - camera.kitchen
+      states:
+      - state: idle
+        class: camera-idle
+    - name: Media Players
+      entities:
+      - media_player.chromecast_kitchen
+      - media_player.family_room_home
+      - media_player.living_room_home
+      - media_player.office_home
+      - media_player.sunroom_speakers
+      - media_player.treadmill
+      states:
+      - state: 'off'
+        class: squeezebox-off
+      - state: idle
+        class: squeezebox-off
+      - state: paused
+        class: squeezebox-off
+      - state: playing
+        class: squeezebox-on
+    - name: Media Players Button
+      elements:
+      - media_players_button
+      action:
+        domain: class
+        service: toggle
+        data:
+          elements:
+          - media_players_layer
+          classes:
+          - layer-visible
+          - layer-hidden
+          default_class: layer-hidden
+    - name: Lights Button
+      elements:
+      - lights_button
+      action:
+        domain: class
+        service: toggle
+        data:
+          elements:
+          - lights_layer
+          classes:
+          - layer-visible
+          - layer-hidden
+          default_class: layer-visible
+    - name: Cameras Button
+      elements:
+      - cameras_button
+      action:
+        domain: class
+        service: toggle
+        data:
+          elements:
+          - cameras_layer
+          classes:
+          - layer-visible
+          - layer-hidden
+          default_class: layer-hidden
+    - name: Data Button
+      elements:
+      - data_button
+      action:
+        domain: class
+        service: toggle
+        data:
+          elements:
+          - data_layer
+          classes:
+          - layer-visible
+          - layer-hidden
+          default_class: layer-visible
+    - name: text_states
+      entities:
+      - device_tracker.mhertz_mlu_iphone
+      - device_tracker.mhertz_jlu_iphone
+      - device_tracker.mhertz_iphone
+      - sensor.floorplan_date
+      - sensor.floorplan_time
+cover.garage_door_opener:
+  friendly_name: Dad Garage
+cover.garage_door_opener_right:
+  friendly_name: Mom Garage
+sensor.mom_garage_door_time_in_state:
+  icon: mdi:timer-sand
+sensor.dad_garage_door_time_in_state:
+  icon: mdi:timer-sand
+sensor.arlo_cameras: {}

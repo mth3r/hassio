@@ -1,0 +1,115 @@
+default_view:
+  view: yes
+  icon: mdi:home
+  entities:
+    - media_player.home_group
+    - sensor.dark_sky_temperature
+    - device_tracker.mhertz_iphone
+    - device_tracker.mhertz_mlu_iphone
+    - device_tracker.mhertz_jlu_iphone
+    - group.garage_door_mom
+    - group.garage_door_dad
+    - group.climate
+    - group.energy
+    - group.Motion
+
+Media Player:
+  view: yes
+  name: media_player
+  icon: mdi:music
+  entities:
+    - media_player.home_group
+    - media_player.family_room_home
+    - media_player.living_room_home
+    - media_player.office_home
+    - media_player.sunroom_speakers
+    - media_player.chromecast_kitchen
+    - media_player.spotify
+
+Switches:
+  view: yes
+  name: Switch
+  icon: mdi:lamp
+  entities:
+    - switch.upstairs_landing
+    - switch.Sunroom
+    - switch.Piano_Front
+    - switch.Piano_Back
+    - switch.Kitchen_Front
+    - switch.jackie_bedroom
+    - switch.Basement_Switch
+    - switch.Dining_Room   
+    - group.security_lights
+    
+Apple:
+  view: yes
+  name: AppleTV
+  icon: mdi:apple
+  entities:
+    - remote.basement
+    - remote.treadmill
+    - media_player.treadmill
+    - media_player.basement
+
+test:
+  view: yes
+  name: Cameras
+  icon: mdi:lamp
+    - group.climate
+    - group.energy
+#    - sensor.last_front_door
+#    - sensor.last_basement
+#    - sensor.last_kitchen
+#    - sensor.arlo_cameras
+
+garage_door_mom:
+  name: Garage Door Mom
+  view: no
+  entities:
+    - cover.garage_door_opener_right
+    - sensor.mom_garage_door_status    
+    - sensor.mom_garage_door_time_in_state
+
+garage_door_dad:
+  name: Garage Door Dad
+  view: no
+  entities:
+    - cover.garage_door_opener
+    - sensor.dad_garage_door_status    
+    - sensor.dad_garage_door_time_in_state
+
+Security_Lights:
+  name: Security Lights
+  view: no
+  entities:
+    - switch.back_flood
+    - switch.Sunroom_Flood
+    - switch.Kitchen_Patio
+    - switch.Front_Porch
+
+Energy:
+  view: no
+  name: Energy
+  entities:
+    - sensor.volts
+    - sensor.energy
+
+Climate:
+  view: no
+  name: Climate
+  entities:
+    - sensor.netatmo_main_level_temperature
+    - sensor.netatmo_outdoor_temperature
+    - sensor.office_temp
+    - sensor.garage_temp
+Motion:
+  view: no
+  name: Motion
+  entities:
+    - sensor.last_front_door
+    - sensor.last_basement
+    - sensor.last_kitchen
+    - binary_sensor.office_motion
+    - binary_sensor.garage_motion
+
+

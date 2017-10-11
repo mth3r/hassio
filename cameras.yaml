@@ -1,0 +1,2 @@
+  - platform: arlo
+    ffmpeg_arguments: ‘-filter:v setpts=40.0*PTS’

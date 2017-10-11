@@ -1,0 +1,182 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 38.7462
+  longitude: -77.4903
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 81
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/New_York
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret api_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+  exclude:
+    domains:
+      -group
+    entities:      
+# Arlo Cameras
+      - sensor.captured_today_basement
+      - sensor.captured_today_front_door
+      - sensor.captured_today_kitchen
+      - sensor.last_basement
+      - sensor.last_front_door
+      - sensor.last_kitchen
+      - sensor.arlo_cameras      
+# Garage Doors
+      - sensor.mom_garage_door_time_in_state
+      - sensor.dad_garage_door_time_in_state
+      - cover.garage_door_opener
+      - cover.garage_door_opener_right
+      - sensor.dad_garage_door_status
+      - sensor.mom_garage_door_status
+# Placeholders
+      - binary_sensor.floorplan
+      - camera.basement
+      - camera.main_level
+# Environmental
+      - sensor.dark_sky_daily_high_temperature
+      - sensor.dark_sky_daily_low_temperature
+      - sensor.date
+      - sensor.date__time
+      - sensor.time
+      - sensor.time__date
+# Other
+      - media_player.home_group
+      - remote.treadmill
+      - remote.basement
+
+# View all events in a logbook
+logbook:
+  exclude:
+    domains:
+      -group
+    entities:
+# Arlo Cameras
+      - sensor.captured_today_basement
+      - sensor.captured_today_front_door
+      - sensor.captured_today_kitchen
+      - sensor.last_basement
+      - sensor.last_front_door
+      - sensor.last_kitchen
+# Placeholders
+      - binary_sensor.floorplan
+      - camera.basement
+      - camera.main_level
+# Garage Doors
+      - sensor.mom_garage_door_time_in_state
+      - sensor.dad_garage_door_time_in_state
+      - cover.garage_door_opener
+      - cover.garage_door_opener_right
+# Environmental
+      - sensor.dark_sky_daily_high_temperature
+      - sensor.dark_sky_daily_low_temperature
+      - sensor.date
+      - sensor.date__time
+      - sensor.time
+      - sensor.time__date
+# Other
+      - media_player.home_group
+
+
+# Track the sun
+sun:
+
+# Weather prediction
+#sensor:
+#  - platform: yr
+
+
+arlo:
+  username: !secret gmail_username
+  password: !secret E_password
+
+# Text to speech
+tts:
+  - platform: google
+
+ring:
+  username: !secret outlook_username
+  password: !secret E_password
+ 
+mqtt:
+  discovery: true
+
+splunk:
+  token: !secret splunk_token
+  host: 192.168.1.30
+ #source="http:hassio 2" (index="homeassistant")
+  
+device_tracker:
+  - platform: owntracks_http
+
+netatmo:
+  api_key: !secret netamo_api_key
+  secret_key: !secret netamo_secret_key
+  username: !secret outlook_username
+  password: !secret E_password
+  discovery: true
+           
+cover:
+  - platform: myq
+    username: !secret outlook_username
+    password: !secret E_password
+    type: chamberlain
+
+panel_custom:
+  - name: floorplan
+    sidebar_title: Floorplan
+    sidebar_icon: mdi:home
+    url_path: floorplan
+    config: !include floorplan.yaml
+
+ffmpeg:
+
+media_player:
+  - platform: spotify
+    client_id: !secret spotify_client_ID
+    client_secret: !secret spotify_client_secret
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+switch: !include switches.yaml
+zone: !include zones.yaml
+sensor: !include sensors.yaml
+camera: !include cameras.yaml
+binary_sensor: !include binary_sensors.yaml
+#time_date_sensor: !include time_date_sensors.yaml

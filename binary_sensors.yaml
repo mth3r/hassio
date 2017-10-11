@@ -1,0 +1,24 @@
+  - platform: ring
+    monitored_conditions:
+      - ding
+      - motion
+
+  - platform: mqtt
+    state_topic: dummy/floorplan/sensor
+    name: Floorplan
+    
+  - platform: mqtt
+    name: Garage Motion
+    state_topic: "smartthings/Garage Motion/motion"
+    device_class: motion
+    payload_on: "active"
+    payload_off: "inactive"
+    retain: true
+
+  - platform: mqtt
+    name: Office Motion
+    state_topic: "smartthings/Office Motion/motion"
+    device_class: motion
+    payload_on: "active"
+    payload_off: "inactive"
+    retain: true
