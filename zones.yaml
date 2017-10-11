@@ -1,13 +1,13 @@
   - name: Work
-    latitude: !secrets work_lat
-    longitude: !secrets work_long
+    latitude: !secret work_lat
+    longitude: !secret work_long
     radius: 250
     icon: mdi:school
 
 # This will override the default home zone
   - name: Home
-    latitude: !secrets home_lat
-    longitude: !secrets home_long
+    latitude: !secret home_lat
+    longitude: !secret home_long
     radius: 100
     icon: mdi:account-multiple
 
