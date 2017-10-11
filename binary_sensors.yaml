@@ -22,3 +22,9 @@
     payload_on: "active"
     payload_off: "inactive"
     retain: true
+
+  - platform: rest
+    name: Travis Status
+    resource: https://api.travis-ci.org/repos/mth3r/hassio/cc.json?branch=master
+    scan_interval: 60
+    value_template: "{{ value_json.last_build_status|int(1) == 0 }}"

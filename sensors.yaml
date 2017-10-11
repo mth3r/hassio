@@ -57,7 +57,22 @@
     state_topic: "smartthings/power meter/voltage"
     unit_of_measurement: "V"
     retain: true
-    
+
+  - platform: command_line
+    name: Travis Status
+    command: /usr/bin/curl -X GET https://api.travis-ci.org/repos/mth3r/hassio/cc.xml\?branch\=master | grep lastBuildStatus | cut -d'"' -f2
+    scan_interval: 60
+
+  - platform: command_line
+    name: Travis Build Label
+    command: /usr/bin/curl -X GET https://api.travis-ci.org/repos/mth3r/hassio/cc.xml\?branch\=master | grep lastBuildLabel | cut -d'"' -f2
+    scan_interval: 60
+
+  - platform: rest
+    name: Travis Status Label
+    resource: https://api.travis-ci.org/repos/mth3r/hassio/cc.json?branch=master
+    scan_interval: 60
+    value_template: "{{ value_json.last_build_number }}"
       
   - platform: template
     sensors:
