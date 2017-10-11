@@ -173,7 +173,7 @@ media_player:
 
 group: !include groups.yaml
 automation: !include automations.yaml
-script: !include scripts.yaml
+#script: !include scripts.yaml
 switch: !include switches.yaml
 zone: !include zones.yaml
 sensor: !include sensors.yaml
