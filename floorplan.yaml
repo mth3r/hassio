@@ -131,6 +131,20 @@
                 - layer-visible
                 - layer-hidden
               default_class: layer-visible
+
+        - name: Alarm Button  
+          elements:
+            - alarm_button
+          action:
+            domain: class
+            service: toggle
+            data:
+              elements:
+                - alarm_button
+              classes:
+                - alarm-disarmed
+                - alarm-armed
+              default_class: alarm-disarmed
 #        - name: thermostat_temp
 #          entities:
 #            - climate.downstairs
