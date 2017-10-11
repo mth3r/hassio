@@ -244,15 +244,15 @@
            sodipodi:role="line">Cameras</tspan></text>
     </g>
     <g
-       id="alarm_button"
+       id="alarm_button_1"
        inkscape:label="#g316">
       <g
          inkscape:label="#g170-0"
          transform="matrix(2.0351759,0,0,2.0351759,81.227687,184.72472)"
          id="Cameras_Button-7-6">
         <rect
-           style="fill:#cccccc;fill-opacity:1;stroke-width:0.19129342"
-           id="rect157-8-7-7"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:0.19129342"
+           id="alarm_button"
            width="15.100728"
            height="3.0735996"
            x="35.814117"
