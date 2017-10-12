@@ -36,7 +36,7 @@ Switches:
     - switch.Piano_Front
     - switch.Piano_Back
     - switch.Kitchen_Front
-	- switch.Kitchen_Back
+    - switch.Kitchen_Back
     - switch.jackie_bedroom
     - switch.Basement_Switch
     - switch.Dining_Room   
