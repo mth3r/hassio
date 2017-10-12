@@ -37,7 +37,15 @@
     payload_on: "on"
     payload_off: "off"
     retain: true
-    
+
+  - platform: mqtt
+    name: "Kitchen Back"
+    state_topic: "smartthings/Kitchen Back/switch"
+    command_topic: "smartthings/Kitchen Back/switch"
+    payload_on: "on"
+    payload_off: "off"
+    retain: true    
+
   - platform: mqtt
     name: "Kitchen Patio"
     state_topic: "smartthings/Kitchen Patio/switch"
@@ -45,7 +53,7 @@
     payload_on: "on"
     payload_off: "off"
     retain: true
-    
+
   - platform: mqtt
     name: "Sunroom Flood"
     state_topic: "smartthings/Sunroom Flood/switch"
@@ -53,7 +61,7 @@
     payload_on: "on"
     payload_off: "off"
     retain: true
-    
+
   - platform: mqtt
     name: "Basement Switch"
     state_topic: "smartthings/Basement Switch/switch"

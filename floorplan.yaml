@@ -119,6 +119,20 @@
                 - layer-hidden
               default_class: layer-hidden
 
+        - name: Night Mode
+          elements:
+            - mode_button
+          action:
+            domain: class
+            service: toggle
+            data:
+              elements:
+                - floorplan-night
+              classes:
+                - layer-visible
+                - layer-hidden
+              default_class: layer-hidden
+
         - name: Data Button
           elements:
             - data_button
