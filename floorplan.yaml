@@ -171,6 +171,9 @@
              -  sensor.dark_sky_daily_low_temperature_3
              -  sensor.dark_sky_summary
              -  sensor.dark_sky_hourly_summary
+             -  sensor.floorplan_day_1
+             -  sensor.floorplan_day_2
+             -  sensor.floorplan_day_3
 #          text_template: '${entity.state ? entity.state.replace(/\s{2,}/g,"") : "undefined"}'
 #
 # The above text_template uses jQuery syntax to search and replace any instance of 2 consecutive (or more) spaces in a string of text.

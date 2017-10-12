@@ -110,4 +110,12 @@
       floorplan_day_1:
         friendly_name: 'day_1'
         value_template:
-          '{{str(datetime.date.today() + datetime.timedelta(1))}}'
+          '{{ (as_timestamp(now())+(60*60*24))|timestamp_custom("%a") }}'
+      floorplan_day_2:
+        friendly_name: 'day_2'
+        value_template:
+          '{{ (as_timestamp(now())+(60*60*24*2))|timestamp_custom("%a") }}'
+      floorplan_day_3:
+        friendly_name: 'day_3'
+        value_template:
+          '{{ (as_timestamp(now())+(60*60*24*3))|timestamp_custom("%a") }}'    
