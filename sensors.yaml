@@ -8,7 +8,7 @@
       - temperature
       - temperature_max
       - temperature_min
-      - daily_summary
+      - summary
       - hourly_summary
 
 
