@@ -110,4 +110,4 @@
       floorplan_day_1:
         friendly_name: 'day_1'
         value_template:
-          '{{today().strftime("%a")}}'
+          '{{str(datetime.date.today() + datetime.timedelta(1))}}'
