@@ -107,3 +107,7 @@
         friendly_name: 'FP_Time'
         value_template:
           '{{now().strftime("%I")}}:{{now().strftime("%M")}} {{now().strftime("%p")}}'
+      floorplan_day_1:
+        friendly_name: 'day_1'
+        value_template:
+          '{{today().strftime("%a")}}'
