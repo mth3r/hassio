@@ -1,13 +1,13 @@
       name: Demo Floorplan
       image: /local/custom_ui/floorplan/floorplan.svg
       stylesheet: /local/custom_ui/floorplan/floorplan.css
-      
+
       # These options are optional
       # warnings:                  # enable warnings (to find out why things might ot be working correctly)
       # pan_zoom:                  # enable experimental panning / zooming
       hide_app_toolbar:          # hide the application toolbar (when used as a custom panel)
       # date_format: DD-MMM-YYYY   # Date format to use in hover-over text
-      
+
       last_motion_entity: sensor.template_last_motion
       last_motion_class: last-motion
 
@@ -21,7 +21,7 @@
              - sensor.office_temp
           #text_template: '${entity.state ? entity.state : "unknown"}'
           # An example of rounding up a number, i.e. a temperature of 90.1 becomes 91
-          #text_template: '${entity.state ? Math.ceil(entity.state) : "undefined"}'  
+          #text_template: '${entity.state ? Math.ceil(entity.state) : "undefined"}'
           class_template: '
             var temp = parseFloat(entity.state.replace("°", ""));
             if (temp < 40)
@@ -76,8 +76,8 @@
               class: 'squeezebox-off'
             - state: 'playing'
               class: 'squeezebox-on'
-        
-        - name: Media Players Button  
+
+        - name: Media Players Button
           elements:
             - media_players_button
           action:
@@ -91,7 +91,7 @@
                 - layer-hidden
               default_class: layer-hidden
 
-        - name: Lights Button  
+        - name: Lights Button
           elements:
             - lights_button
           action:
@@ -105,7 +105,7 @@
                 - layer-hidden
               default_class: layer-visible
 
-        - name: Cameras Button  
+        - name: Cameras Button
           elements:
             - cameras_button
           action:
@@ -119,7 +119,7 @@
                 - layer-hidden
               default_class: layer-hidden
 
-        - name: Data Button  
+        - name: Data Button
           elements:
             - data_button
           action:
@@ -133,7 +133,7 @@
                 - layer-hidden
               default_class: layer-visible
 
-        - name: Alarm Button  
+        - name: Alarm Button
           elements:
             - alarm_button
           action:
@@ -161,6 +161,16 @@
              -  device_tracker.mhertz_iphone
              -  sensor.floorplan_date
              -  sensor.floorplan_time
+             -  sensor.dark_sky_daily_high_temperature
+             -  sensor.dark_sky_daily_high_temperature_1
+             -  sensor.dark_sky_daily_high_temperature_2
+             -  sensor.dark_sky_daily_high_temperature_3
+             -  sensor.dark_sky_daily_low_temperature
+             -  sensor.dark_sky_daily_low_temperature_1
+             -  sensor.dark_sky_daily_low_temperature_2
+             -  sensor.dark_sky_daily_low_temperature_3
+             -  sensor.dark_sky_daily_summary
+             -  sensor.dark_sky_hourly_summary
 #          text_template: '${entity.state ? entity.state.replace(/\s{2,}/g,"") : "undefined"}'
 #
 # The above text_template uses jQuery syntax to search and replace any instance of 2 consecutive (or more) spaces in a string of text.

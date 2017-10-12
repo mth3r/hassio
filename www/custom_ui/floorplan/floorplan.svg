@@ -93,7 +93,7 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="190.41475"
+     inkscape:cx="106.31955"
      inkscape:cy="145.73448"
      inkscape:document-units="mm"
      inkscape:current-layer="data_layer"
@@ -1095,6 +1095,95 @@
          id="tspan1149"
          x="48.841415"
          y="4.2941914">75.5</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:1;font-family:'Courier New';-inkscape-font-specification:'Courier New, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="11.819926"
+       y="15.164083"
+       id="sensor.dark_sky_daily_high_temperature_1"
+       inkscape:label="#text3974"><tspan
+         style="stroke-width:0.26458332"
+         sodipodi:role="line"
+         id="tspan1147-6"
+         x="11.819926"
+         y="15.164083">75.5</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:1;font-family:'Courier New';-inkscape-font-specification:'Courier New, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="11.819926"
+       y="19.440393"
+       id="sensor.dark_sky_daily_low_temperature_1"
+       inkscape:label="#text3974"><tspan
+         style="stroke-width:0.26458332"
+         sodipodi:role="line"
+         id="tspan1149-0"
+         x="11.819926"
+         y="19.440393">75.5</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:1;font-family:'Courier New';-inkscape-font-specification:'Courier New, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="29.459717"
+       y="15.297716"
+       id="sensor.dark_sky_daily_high_temperature_2"
+       inkscape:label="#text3974"><tspan
+         style="stroke-width:0.26458332"
+         sodipodi:role="line"
+         id="tspan1147-6-2"
+         x="29.459717"
+         y="15.297716">75.5</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:1;font-family:'Courier New';-inkscape-font-specification:'Courier New, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="29.459717"
+       y="19.57403"
+       id="sensor.dark_sky_daily_low_temperature_2"
+       inkscape:label="#text3974"><tspan
+         style="stroke-width:0.26458332"
+         sodipodi:role="line"
+         id="tspan1149-0-8"
+         x="29.459717"
+         y="19.57403">75.5</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:1;font-family:'Courier New';-inkscape-font-specification:'Courier New, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="46.832237"
+       y="15.030448"
+       id="sensor.dark_sky_daily_high_temperature_3"
+       inkscape:label="#text3974"><tspan
+         style="stroke-width:0.26458332"
+         sodipodi:role="line"
+         id="tspan1147-6-2-4"
+         x="46.832237"
+         y="15.030448">75.5</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:1;font-family:'Courier New';-inkscape-font-specification:'Courier New, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="46.832237"
+       y="19.306761"
+       id="sensor.dark_sky_daily_low_temperature_3"
+       inkscape:label="#text3974"><tspan
+         style="stroke-width:0.26458332"
+         sodipodi:role="line"
+         id="tspan1149-0-8-5"
+         x="46.832237"
+         y="19.306761">75.5</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222222px;line-height:1.25;font-family:'Courier New';-inkscape-font-specification:'Courier New, Normal';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
+       x="11.292228"
+       y="7.6171761"
+       id="sensor.dark_sky_hourly_summary"
+       inkscape:label="#text1201"><tspan
+         sodipodi:role="line"
+         id="tspan1199"
+         x="11.292228"
+         y="7.6171761"
+         style="stroke-width:0.26458332;-inkscape-font-specification:'Courier New, Normal';font-family:'Courier New';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:2.82222222px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;">summary</tspan><tspan
+         sodipodi:role="line"
+         x="11.292228"
+         y="12.026898"
+         style="stroke-width:0.26458332;-inkscape-font-specification:'Courier New, Normal';font-family:'Courier New';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:2.82222222px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
+         id="tspan1203" /></text>
   </g>
   <g
      inkscape:groupmode="layer"
