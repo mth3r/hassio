@@ -4,7 +4,9 @@
       - temperature
       - temperature_max
       - temperature_min
-   
+      - summary
+      - forecast
+
   - platform: arlo
     monitored_conditions:
       - captured_today
@@ -25,13 +27,13 @@
     unit_of_measurement: "°F"
     retain: true
     icon: mdi:thermometer
-    
+
   - platform: mqtt
     name: Garage Humidity
     state_topic: "smartthings/Garage Motion/humidity"
     unit_of_measurement: "%"
     retain: true
-    
+
   - platform: mqtt
     name: Office Temp
     state_topic: "smartthings/Office Motion/temperature"
@@ -39,7 +41,7 @@
     unit_of_measurement: "°F"
     retain: true
     icon: mdi:thermometer
-    
+
   - platform: mqtt
     name: Office Humidity
     state_topic: "smartthings/Office Motion/humidity"
@@ -51,7 +53,7 @@
     state_topic: "smartthings/power meter/energy"
     unit_of_measurement: "kWh"
     retain: true
-    
+
   - platform: mqtt
     name: Volts
     state_topic: "smartthings/power meter/voltage"
@@ -73,7 +75,7 @@
     resource: https://api.travis-ci.org/repos/mth3r/hassio/cc.json?branch=master
     scan_interval: 60
     value_template: "{{ value_json.last_build_number }}"
-      
+
   - platform: template
     sensors:
       dad_garage_door_status:
@@ -94,9 +96,9 @@
         value_template: '{{relative_time(states.cover.garage_door_opener_right.last_changed)}}'
       floorplan_date:
         friendly_name: 'FP_Date'
-        value_template: 
+        value_template:
           '{{now().strftime("%a")}}, {{now().strftime("%b")}} {{now().strftime("%d")}}'
       floorplan_time:
         friendly_name: 'FP_Time'
-        value_template: 
+        value_template:
           '{{now().strftime("%I")}}:{{now().strftime("%M")}} {{now().strftime("%p")}}'

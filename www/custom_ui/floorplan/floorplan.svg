@@ -93,10 +93,10 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="274.50995"
+     inkscape:cx="190.41475"
      inkscape:cy="145.73448"
      inkscape:document-units="mm"
-     inkscape:current-layer="lights_layer"
+     inkscape:current-layer="data_layer"
      showgrid="false"
      inkscape:window-width="1963"
      inkscape:window-height="1305"
@@ -121,7 +121,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1053,6 +1053,48 @@
          x="81.780228"
          y="6.7057252"
          style="stroke-width:0.33909392">home12</tspan></text>
+    <rect
+       style="display:inline;fill:#cccccc;fill-opacity:1;stroke-width:0.87024146"
+       id="rect3970-0"
+       width="51.221733"
+       height="20.367273"
+       x="9.3347149"
+       y="0.23986973"
+       ry="2.2630308" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:1;font-family:'Courier New';-inkscape-font-specification:'Courier New, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="11.380315"
+       y="4.2032409"
+       id="sensor.floorplan_date-0"
+       inkscape:label="#text3974"><tspan
+         style="stroke-width:0.26458332"
+         sodipodi:role="line"
+         id="tspan217-6"
+         x="11.380315"
+         y="4.2032409">Today</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:1;font-family:'Courier New';-inkscape-font-specification:'Courier New, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="34.800335"
+       y="4.2941914"
+       id="sensor.dark_sky_daily_high_temperature"
+       inkscape:label="#text3974"><tspan
+         sodipodi:role="line"
+         id="tspan1147"
+         x="34.800335"
+         y="4.2941914">75.5</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:1;font-family:'Courier New';-inkscape-font-specification:'Courier New, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="48.841415"
+       y="4.2941914"
+       id="sensor.dark_sky_daily_low_temperature"
+       inkscape:label="#text3974"><tspan
+         sodipodi:role="line"
+         id="tspan1149"
+         x="48.841415"
+         y="4.2941914">75.5</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
