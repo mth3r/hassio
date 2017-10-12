@@ -1,11 +1,16 @@
   - platform: darksky
     api_key: !secret darksky_api_key
+    forecast:
+      - 1
+      - 2
+      - 3
     monitored_conditions:
       - temperature
       - temperature_max
       - temperature_min
-      - summary
-      - forecast
+      - daily_summary
+      - hourly_summary
+
 
   - platform: arlo
     monitored_conditions:
