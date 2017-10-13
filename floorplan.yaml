@@ -121,7 +121,7 @@
 
         - name: Night Mode
           elements:
-            - mode_button
+            - floorplan_mode
           action:
             domain: class
             service: toggle
@@ -160,20 +160,21 @@
                 - alarm-disarmed
                 - alarm-armed
               default_class: alarm-disarmed
-        - name: Windows Button
+
+        - name: Night Mode
           elements:
-            - windows_button
+            - night_mode
           action:
             domain: class
             service: toggle
             data:
               elements:
-                - windows_group
-                - doors_group
+                - floorplan-night
               classes:
-                - group_day
-                - group_night
-              default_class: group_day
+                - layer-hidden
+                - layer-visible
+              default_class: layer-hidden
+
 #        - name: thermostat_temp
 #          entities:
 #            - climate.downstairs

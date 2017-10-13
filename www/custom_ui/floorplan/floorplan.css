@@ -151,10 +151,24 @@ svg, svg * {
   visibility:visible !important;
 }
 
+
 .group_night {
-  stroke: invert(100%) !important;
+  stroke: yellow !important;
 }
 
 .group_day {
-  stroke: invert(0%) !important;
+  stroke: black !important;
+}
+
+.night{
+stroke: opacity: 0.5 !important;
+}
+
+.windows.night{
+  stroke: red !important;
+}
+
+.doors.night{
+  stroke: green !important;
+
 }
