@@ -168,7 +168,12 @@ stroke: opacity: 0.5 !important;
   stroke: red !important;
 }
 
-.doors.night{
-  stroke: green !important;
+}
 
+.exterior_wall_night {
+  stroke: red !important;
+}
+
+.exterior_wall_day {
+  stroke: black !important;
 }
