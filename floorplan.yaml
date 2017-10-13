@@ -160,6 +160,20 @@
                 - alarm-disarmed
                 - alarm-armed
               default_class: alarm-disarmed
+        - name: Windows Button
+          elements:
+            - windows_button
+          action:
+            domain: class
+            service: toggle
+            data:
+              elements:
+                - windows_group
+                - doors_group
+              classes:
+                - group_day
+                - group_night
+              default_class: group_day
 #        - name: thermostat_temp
 #          entities:
 #            - climate.downstairs

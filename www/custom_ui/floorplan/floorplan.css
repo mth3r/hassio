@@ -98,7 +98,7 @@ svg, svg * {
 }
 
 .light-on {
-  
+
 }
 
 /* Doorbell */
@@ -149,4 +149,12 @@ svg, svg * {
 
 .layer-visible {
   visibility:visible !important;
+}
+
+.group_night {
+  stroke: invert(100%) !important;
+}
+
+.group_day {
+  stroke: invert(0%) !important;
 }
