@@ -81,6 +81,9 @@
     scan_interval: 60
     value_template: "{{ value_json.last_build_number }}"
 
+  - platform: pi_hole
+    host: !secret pi-hole_ip
+
   - platform: template
     sensors:
       dad_garage_door_status:
@@ -118,4 +121,43 @@
       floorplan_day_3:
         friendly_name: 'day_3'
         value_template:
-          '{{ (as_timestamp(now())+(60*60*24*3))|timestamp_custom("%a") }}'    
+          '{{ (as_timestamp(now())+(60*60*24*3))|timestamp_custom("%a") }}'
+      pihole_queries_today:
+        value_template: '{{ states.sensor.pihole.attributes.queries_today }}'
+        friendly_name: 'Queries Today'
+      pihole_percentage_today:
+        value_template: '{{ states.sensor.pihole.attributes.percentage_today }}'
+        friendly_name: 'Percentage Today'
+      pihole_domains_blocked:
+        value_template: '{{ states.sensor.pihole.attributes.domains_blocked }}'
+        friendly_name: 'Domains Blocked'
+      pihole_queries_today:
+        value_template: '{{ states.sensor.pihole.attributes.queries_today }}'
+        friendly_name: 'Queries Today'
+      pihole_percentage_today:
+        value_template: '{{ states.sensor.pihole.attributes.percentage_today }}'
+        friendly_name: 'Percentage Today'
+      pihole_domains_blocked:
+        value_template: '{{ states.sensor.pihole.attributes.domains_blocked }}'
+        friendly_name: 'Domains Blocked'
+
+
+  - platform: command_line
+    name: "HA Uptime"
+    command: echo "$(($(date +%s) - $(date -d "$(head -n1 /home/hass/.homeassistant/home-assistant.log | cut -d' ' -f-2)" +%s)))"
+    scan_interval: 720
+    value_template: >-
+      {% set uptime = value | int %}
+      {% set seconds = uptime % 60 %}
+      {% set minutes = ((uptime % 3600) / 60) | int %}
+      {% set hours = ((uptime % 86400) / 3600) | int %}
+      {% set days = (uptime / 86400) | int %}
+      {%- if days > 0 -%}
+        {%- if days == 1 -%}
+          1 day
+        {%- else -%}
+          {{ days }} days
+        {%- endif -%}
+        {{ ', ' }}
+      {%- endif -%}
+      {{ '%02d' % hours }}:{{ '%02d' % minutes }}
