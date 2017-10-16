@@ -74,14 +74,14 @@
     name: Travis Status Timestamp
     resource: https://api.travis-ci.org/repos/mth3r/hassio/cc.json?branch=master
     scan_interval: 60
-    value_template: "{{as_timestamp(test_json.last_build_finished_at)|timestamp_local}}"
+    value_template: "{{as_timestamp(value_json.last_build_finished_at)|timestamp_local}}"
 
   - platform: rest
     name: Travis Status
     resource: https://api.travis-ci.org/repos/mth3r/hassio/cc.json?branch=master
     scan_interval: 60
     value_template:
-      "{% if test_json.last_build_status|int(1) == 0 %}
+      "{% if value_json.last_build_status|int(1) == 0 %}
         passed
        {% else %}
         failed
