@@ -1,5 +1,4 @@
 #Groups
-
 garage_door_mom:
   name: Garage Door Mom
   entities:
@@ -35,6 +34,7 @@ Climate:
     - sensor.netatmo_outdoor_temperature
     - sensor.office_temp
     - sensor.garage_temp
+
 Motion:
   name: Motion
   entities:
@@ -54,14 +54,27 @@ Firewall:
     - sensor.pihole_dns_unique_domains
     - sensor.pihole_dns_unique_clients
     - sensor.pihole_domains_blocked
-    - sensor.pihole_domains_blocked_2
     - sensor.pihole_percentage_today
     - sensor.pihole_queries_today
-Travis-ci:
+
+Travis:
   name: Travis
   entities:
-    sensor.travis_status_label
-    sensor.travis_status_timestamp
+    - sensor.travis_status_label
+    - sensor.travis_status_timestamp
+
+Switch_group:
+  name: Switch_group
+  entities:
+    - switch.upstairs_landing
+    - switch.Sunroom
+    - switch.Piano_Front
+    - switch.Piano_Back
+    - switch.Kitchen_Front
+    - switch.Kitchen_Back
+    - switch.jackie_bedroom
+    - switch.Basement_Switch
+    - switch.Dining_Room
 
 #views
 default_view:
@@ -97,15 +110,7 @@ Switches:
   name: Switch
   icon: mdi:lamp
   entities:
-    - switch.upstairs_landing
-    - switch.Sunroom
-    - switch.Piano_Front
-    - switch.Piano_Back
-    - switch.Kitchen_Front
-    - switch.Kitchen_Back
-    - switch.jackie_bedroom
-    - switch.Basement_Switch
-    - switch.Dining_Room
+    - group.Switch_group
     - group.security_lights
 
 Apple:
@@ -132,8 +137,8 @@ pi-hole:
   name: pi-hole
   icon: mdi:fire
   entities:
-    group.firewall
-    group.travis
+    - group.firewall
+    - group.travis
 
 climate:
   view: yes
