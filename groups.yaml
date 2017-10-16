@@ -39,9 +39,9 @@ Switches:
     - switch.Kitchen_Back
     - switch.jackie_bedroom
     - switch.Basement_Switch
-    - switch.Dining_Room   
+    - switch.Dining_Room
     - group.security_lights
-    
+
 Apple:
   view: yes
   name: AppleTV
@@ -68,7 +68,7 @@ garage_door_mom:
   view: no
   entities:
     - cover.garage_door_opener_right
-    - sensor.mom_garage_door_status    
+    - sensor.mom_garage_door_status
     - sensor.mom_garage_door_time_in_state
 
 garage_door_dad:
@@ -76,7 +76,7 @@ garage_door_dad:
   view: no
   entities:
     - cover.garage_door_opener
-    - sensor.dad_garage_door_status    
+    - sensor.dad_garage_door_status
     - sensor.dad_garage_door_time_in_state
 
 Security_Lights:
@@ -112,5 +112,19 @@ Motion:
     - sensor.last_kitchen
     - binary_sensor.office_motion
     - binary_sensor.garage_motion
-
-
+pi-hole:
+  view: yes
+  name: pi-hole
+  icon: mdi:raspberrypi
+  entities:
+    - sensor.pihole_ads_blocked_today
+    - sensor.pihole_ads_percentage_blocked_today
+    - sensor.pihole_dns_queries_cached
+    - sensor.pihole_dns_queries_forwarded
+    - sensor.pihole_dns_queries_today
+    - sensor.pihole_dns_unique_domains
+    - sensor.pihole_dns_unique_clients
+    - sensor.pihole_domains_blocked
+    - sensor.pihole_domains_blocked_2
+    - sensor.pihole_percentage_today
+    - sensor.pihole_queries_today
