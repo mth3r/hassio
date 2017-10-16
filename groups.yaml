@@ -53,9 +53,6 @@ Firewall:
     - sensor.pihole_dns_queries_today
     - sensor.pihole_dns_unique_domains
     - sensor.pihole_dns_unique_clients
-    - sensor.pihole_domains_blocked
-    - sensor.pihole_percentage_today
-    - sensor.pihole_queries_today
 
 Travis:
   name: Travis
@@ -64,7 +61,7 @@ Travis:
     - sensor.travis_status_timestamp
 
 Switch_group:
-  name: Switch_group
+  name: Switches
   entities:
     - switch.upstairs_landing
     - switch.Sunroom
@@ -75,6 +72,13 @@ Switch_group:
     - switch.jackie_bedroom
     - switch.Basement_Switch
     - switch.Dining_Room
+
+Camera_Group:
+  name: Cameras
+  entities:
+    - sensor.last_front_door
+    - sensor.last_basement
+    - sensor.last_kitchen
 
 #views
 default_view:
@@ -123,14 +127,12 @@ Apple:
     - media_player.treadmill
     - media_player.basement
 
-test:
+Cameras:
   view: yes
   icon: mdi:camera
   name: Cameras
   entities:
-    - sensor.last_front_door
-    - sensor.last_basement
-    - sensor.last_kitchen
+    - group.Camera_Group
 
 pi-hole:
   view: yes
