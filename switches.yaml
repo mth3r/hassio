@@ -70,10 +70,10 @@
     payload_off: "off"
     retain: true
 
-    - platform: mqtt
-      name: "Dining Room"
-      state_topic: "smartthings/Dining room/switch"
-      command_topic: "smartthings/Dining room/switch"
-      payload_on: "on"
-      payload_off: "off"
-      retain: true
+  - platform: mqtt
+    name: "Dining Room"
+    state_topic: "smartthings/Dining room/switch"
+    command_topic: "smartthings/Dining room/switch"
+    payload_on: "on"
+    payload_off: "off"
+    retain: true
