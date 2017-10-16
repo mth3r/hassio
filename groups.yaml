@@ -43,6 +43,25 @@ Motion:
     - sensor.last_kitchen
     - binary_sensor.office_motion
     - binary_sensor.garage_motion
+Firewall:
+  name: Firewall
+  entities:
+    - sensor.pihole_ads_blocked_today
+    - sensor.pihole_ads_percentage_blocked_today
+    - sensor.pihole_dns_queries_cached
+    - sensor.pihole_dns_queries_forwarded
+    - sensor.pihole_dns_queries_today
+    - sensor.pihole_dns_unique_domains
+    - sensor.pihole_dns_unique_clients
+    - sensor.pihole_domains_blocked
+    - sensor.pihole_domains_blocked_2
+    - sensor.pihole_percentage_today
+    - sensor.pihole_queries_today
+Travis-ci:
+  name: Travis
+  entities:
+    sensor.travis_status_label
+    sensor.travis_status_timestamp
 
 #views
 default_view:
@@ -101,26 +120,25 @@ Apple:
 
 test:
   view: yes
+  icon: mdi:camera
   name: Cameras
-    - group.climate
-    - group.energy
-#    - sensor.last_front_door
-#    - sensor.last_basement
-#    - sensor.last_kitchen
-#    - sensor.arlo_cameras
+  entities:
+    - sensor.last_front_door
+    - sensor.last_basement
+    - sensor.last_kitchen
+
 pi-hole:
   view: yes
   name: pi-hole
-  icon: mdi:raspberrypi
+  icon: mdi:fire
   entities:
-    - sensor.pihole_ads_blocked_today
-    - sensor.pihole_ads_percentage_blocked_today
-    - sensor.pihole_dns_queries_cached
-    - sensor.pihole_dns_queries_forwarded
-    - sensor.pihole_dns_queries_today
-    - sensor.pihole_dns_unique_domains
-    - sensor.pihole_dns_unique_clients
-    - sensor.pihole_domains_blocked
-    - sensor.pihole_domains_blocked_2
-    - sensor.pihole_percentage_today
-    - sensor.pihole_queries_today
+    group.firewall
+    group.travis
+
+climate:
+  view: yes
+  name: energy
+  icon: mdi:power-plug
+  entities:
+      - group.climate
+      - group.energy
