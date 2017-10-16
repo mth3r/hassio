@@ -11,7 +11,6 @@
       - summary
       - hourly_summary
 
-
   - platform: arlo
     monitored_conditions:
       - captured_today
@@ -76,6 +75,12 @@
     resource: https://api.travis-ci.org/repos/mth3r/hassio/cc.json?branch=master
     scan_interval: 60
     value_template: "{{ value_json.last_build_finished_at }}"
+
+  - platform: rest
+    name: Travis Status Status
+    resource: https://api.travis-ci.org/repos/mth3r/hassio/cc.json?branch=master
+    scan_interval: 60
+    value_template: "{{ value_json.last_build_result }}"
 
   - platform: pi_hole
     host: !secret pi-hole_ip
