@@ -175,6 +175,21 @@
                 - layer-visible
               default_class: layer-hidden
 
+        - name: Night Mode 2
+          elements:
+            - night_mode
+          action:
+            domain: class
+            service: toggle
+            data:
+              elements:
+                - exterior_wall
+              classes:
+                - layer-hidden
+                - layer-visible
+              default_class: layer-hidden
+
+
 #        - name: thermostat_temp
 #          entities:
 #            - climate.downstairs
