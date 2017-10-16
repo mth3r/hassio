@@ -1,3 +1,50 @@
+#Groups
+
+garage_door_mom:
+  name: Garage Door Mom
+  entities:
+    - cover.garage_door_opener_right
+    - sensor.mom_garage_door_status
+    - sensor.mom_garage_door_time_in_state
+
+garage_door_dad:
+  name: Garage Door Dad
+  entities:
+    - cover.garage_door_opener
+    - sensor.dad_garage_door_status
+    - sensor.dad_garage_door_time_in_state
+
+Security_Lights:
+  name: Security Lights
+  entities:
+    - switch.back_flood
+    - switch.Sunroom_Flood
+    - switch.Kitchen_Patio
+    - switch.Front_Porch
+
+Energy:
+  name: Energy
+  entities:
+    - sensor.volts
+    - sensor.energy
+
+Climate:
+  name: Climate
+  entities:
+    - sensor.netatmo_main_level_temperature
+    - sensor.netatmo_outdoor_temperature
+    - sensor.office_temp
+    - sensor.garage_temp
+Motion:
+  name: Motion
+  entities:
+    - sensor.last_front_door
+    - sensor.last_basement
+    - sensor.last_kitchen
+    - binary_sensor.office_motion
+    - binary_sensor.garage_motion
+
+#views
 default_view:
   view: yes
   icon: mdi:home
@@ -55,63 +102,12 @@ Apple:
 test:
   view: yes
   name: Cameras
-  icon: mdi:lamp
     - group.climate
     - group.energy
 #    - sensor.last_front_door
 #    - sensor.last_basement
 #    - sensor.last_kitchen
 #    - sensor.arlo_cameras
-
-garage_door_mom:
-  name: Garage Door Mom
-  view: no
-  entities:
-    - cover.garage_door_opener_right
-    - sensor.mom_garage_door_status
-    - sensor.mom_garage_door_time_in_state
-
-garage_door_dad:
-  name: Garage Door Dad
-  view: no
-  entities:
-    - cover.garage_door_opener
-    - sensor.dad_garage_door_status
-    - sensor.dad_garage_door_time_in_state
-
-Security_Lights:
-  name: Security Lights
-  view: no
-  entities:
-    - switch.back_flood
-    - switch.Sunroom_Flood
-    - switch.Kitchen_Patio
-    - switch.Front_Porch
-
-Energy:
-  view: no
-  name: Energy
-  entities:
-    - sensor.volts
-    - sensor.energy
-
-Climate:
-  view: no
-  name: Climate
-  entities:
-    - sensor.netatmo_main_level_temperature
-    - sensor.netatmo_outdoor_temperature
-    - sensor.office_temp
-    - sensor.garage_temp
-Motion:
-  view: no
-  name: Motion
-  entities:
-    - sensor.last_front_door
-    - sensor.last_basement
-    - sensor.last_kitchen
-    - binary_sensor.office_motion
-    - binary_sensor.garage_motion
 pi-hole:
   view: yes
   name: pi-hole

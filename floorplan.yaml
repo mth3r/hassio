@@ -59,6 +59,7 @@
           states:
             - state: 'idle'
               class: 'camera-idle'
+
         - name: Media Players
           entities:
             - media_player.chromecast_kitchen
