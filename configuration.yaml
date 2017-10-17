@@ -185,8 +185,47 @@ input_boolean:
     name: bedtime
     icon: mdi:hotel
 
+# scene:
+  # - name: evening
+    # entities:
+      # - group.security_lights
+          # state: on
+      # - switch.Piano_Back
+          # state: on
+      # - switch.Piano_Front
+          # state: on
+      # - switch.Dining_Room
+          # state: on
+
+  # - name: morning
+    # entities:
+      # - group.security_lights
+          # state: off
+      # - switch.Piano_Back
+          # state: off
+      # - switch.Piano_Front
+          # state: off
+      # - switch.Dining_Room
+          # state: off
+
+  # - name: Off To Bed
+    # entities:
+      # - switch.Piano_Back
+          # state: off
+      # - switch.Piano_Front
+          # state: off
+      # - switch.Dining_Room
+          # state: off
+      # - switch.Dining_Room
+          # state: off
+      # - switch.Basement_Switch
+          # state: off
+      # - switch.Sunroom
+          # state: off
+
+
 group: !include groups.yaml
-automation: !include automations.yaml
+#automation: !include automations.yaml
 #script: !include scripts.yaml
 switch: !include switches.yaml
 zone: !include zones.yaml
