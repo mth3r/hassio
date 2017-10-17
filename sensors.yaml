@@ -74,7 +74,10 @@
     name: Travis Status Timestamp
     resource: https://api.travis-ci.org/repos/mth3r/hassio/cc.json?branch=master
     scan_interval: 60
-    value_template: "{{as_timestamp(value_json.last_build_finished_at)|timestamp_local}}"
+    value_template: "
+    {% if (as_timestamp(now())-as_timestamp(.last_build_finished_at )) | int <= 60 %}{{ (as_timestamp(now())-as_timestamp(value_json.last_build_finished_at )) | int }} Seconds
+    {%elif (as_timestamp(now())-as_timestamp(value_json.last_build_finished_at )) | int < 3600 %}{{ (as_timestamp(now())-as_timestamp(value_json.last_build_finished_at )) | int // 60 }} Minutes
+    {%elif (as_timestamp(now())-as_timestamp(value_json.last_build_finished_at )) | int >= 3600 %}{{ (as_timestamp(now())-as_timestamp(value_json.last_build_finished_at )) | round(common) | int * 0.000277 | round(4) }} Hours{%else%}??{%endif%}"
 
   - platform: rest
     name: Travis Status
