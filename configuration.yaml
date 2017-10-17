@@ -48,7 +48,7 @@ history:
   exclude:
     domains:
       -group
-    entities:      
+    entities:
 # Arlo Cameras
       - sensor.captured_today_basement
       - sensor.captured_today_front_door
@@ -56,7 +56,7 @@ history:
       - sensor.last_basement
       - sensor.last_front_door
       - sensor.last_kitchen
-      - sensor.arlo_cameras      
+      - sensor.arlo_cameras
 # Garage Doors
       - sensor.mom_garage_door_time_in_state
       - sensor.dad_garage_door_time_in_state
@@ -132,7 +132,7 @@ tts:
 ring:
   username: !secret outlook_username
   password: !secret E_password
- 
+
 mqtt:
   discovery: true
 
@@ -140,7 +140,7 @@ splunk:
   token: !secret splunk_token
   host: 192.168.1.30
  #source="http:hassio 2" (index="homeassistant")
-  
+
 device_tracker:
   - platform: owntracks_http
 
@@ -150,7 +150,7 @@ netatmo:
   username: !secret outlook_username
   password: !secret E_password
   discovery: true
-           
+
 cover:
   - platform: myq
     username: !secret outlook_username
