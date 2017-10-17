@@ -2,6 +2,7 @@
     name: "Sunroom"
     state_topic: "smartthings/Sunroom/switch"
     command_topic: "smartthings/Sunroom/switch"
+    show_last_changed: true
     payload_on: "on"
     payload_off: "off"
     retain: true
@@ -10,6 +11,7 @@
     name: "Front Porch"
     state_topic: "smartthings/Front Porch/switch"
     command_topic: "smartthings/Front Porch/switch"
+    show_last_changed: true
     payload_on: "on"
     payload_off: "off"
     retain: true
@@ -18,6 +20,7 @@
     name: "Piano Front"
     state_topic: "smartthings/Piano Room Front/switch"
     command_topic: "smartthings/Piano Room Back/switch"
+    show_last_changed: true
     payload_on: "on"
     payload_off: "off"
     retain: true
@@ -26,6 +29,7 @@
     name: "Piano Back"
     state_topic: "smartthings/Piano Room Back/switch"
     command_topic: "smartthings/Piano Room Back/switch"
+    show_last_changed: true
     payload_on: "on"
     payload_off: "off"
     retain: true
@@ -34,6 +38,7 @@
     name: "Kitchen Front"
     state_topic: "smartthings/Kitchen Front/switch"
     command_topic: "smartthings/Kitchen Front/switch"
+    show_last_changed: true
     payload_on: "on"
     payload_off: "off"
     retain: true
@@ -42,6 +47,7 @@
     name: "Kitchen Back"
     state_topic: "smartthings/Kitchen Back/switch"
     command_topic: "smartthings/Kitchen Back/switch"
+    show_last_changed: true
     payload_on: "on"
     payload_off: "off"
     retain: true
@@ -50,6 +56,7 @@
     name: "Kitchen Patio"
     state_topic: "smartthings/Kitchen Patio/switch"
     command_topic: "smartthings/Kitchen Patio/switch"
+    show_last_changed: true
     payload_on: "on"
     payload_off: "off"
     retain: true
@@ -58,6 +65,7 @@
     name: "Sunroom Flood"
     state_topic: "smartthings/Sunroom Flood/switch"
     command_topic: "smartthings/Sunroom Flood/switch"
+    show_last_changed: true
     payload_on: "on"
     payload_off: "off"
     retain: true
@@ -66,6 +74,7 @@
     name: "Basement Switch"
     state_topic: "smartthings/Basement Switch/switch"
     command_topic: "smartthings/Basement Switch/switch"
+    show_last_changed: true
     payload_on: "on"
     payload_off: "off"
     retain: true
@@ -74,6 +83,7 @@
     name: "Dining Room"
     state_topic: "smartthings/Dining room/switch"
     command_topic: "smartthings/Dining room/switch"
+    show_last_changed: true
     payload_on: "on"
     payload_off: "off"
     retain: true
