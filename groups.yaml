@@ -63,7 +63,6 @@ Travis:
 
 Switch_group:
   name: Switches
-  show_last_changed: true
   entities:
     - switch.upstairs_landing
     - switch.Sunroom
@@ -102,7 +101,6 @@ Media Player:
   view: yes
   name: media_player
   icon: mdi:music
-  show_last_changed: true
   entities:
     - media_player.home_group
     - media_player.family_room_home
@@ -116,7 +114,6 @@ Switches:
   view: yes
   name: Switch
   icon: mdi:lamp
-  show_last_changed: true
   entities:
     - group.Switch_group
     - group.security_lights
