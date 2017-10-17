@@ -179,4 +179,5 @@ zone: !include zones.yaml
 sensor: !include sensors.yaml
 camera: !include cameras.yaml
 binary_sensor: !include binary_sensors.yaml
+customize_glob: !include customize_glob.yaml
 #time_date_sensor: !include time_date_sensors.yaml

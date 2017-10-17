@@ -129,6 +129,3 @@ sensor.mom_garage_door_time_in_state:
 sensor.dad_garage_door_time_in_state:
   icon: mdi:timer-sand
 #sensor.arlo_cameras: {}
-customize_glob:
-    "Travis*":
-      icon: mdi:description
