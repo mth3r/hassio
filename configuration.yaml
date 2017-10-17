@@ -171,6 +171,10 @@ media_player:
     client_id: !secret spotify_client_ID
     client_secret: !secret spotify_client_secret
 
+customize_glob:
+    "Travis*":
+      icon: mdi:description
+
 group: !include groups.yaml
 automation: !include automations.yaml
 #script: !include scripts.yaml
