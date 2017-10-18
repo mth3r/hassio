@@ -129,7 +129,6 @@ arlo:
 tts:
   - platform: google
 
-  tts:
   - platform: amazon_polly
     aws_access_key_id: !secret Amazon_Key_ID
     aws_secret_access_key: !secret Amazon_Access_Key

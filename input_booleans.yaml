@@ -1,13 +1,12 @@
-trigger_light:
-  name: Waiting for Sunrise
-  icon: mdi:weather-sunset-up
+  trigger_light:
+    name: Waiting for Sunrise
+    icon: mdi:weather-sunset-up
 
-trigger_bedtime:
-  name: bedtime
-  icon: mdi:hotel
-  initial: off
+  trigger_bedtime:
+    name: bedtime
+    icon: mdi:hotel
 
-speech_notifications:
-  name: Speech Notifications
-  icon: mdi:speaker-wireless
-  initial: on
+  speech_notifications:
+    name: Speech Notifications
+    icon: mdi:speaker-wireless
+    initial: on

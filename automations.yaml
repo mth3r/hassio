@@ -1,8 +1,8 @@
   - alias: Sunrise_Trigger
     trigger:
-      platform: sun
-      event: sunrise
-      offset: "-00:45:00"
+      - platform: sun
+        event: sunrise
+        offset: "-00:45:00"
     action:
       - service: input_boolean.turn_off
         entity_id: input_boolean.trigger_bedtime
@@ -42,7 +42,8 @@
           - switch.Dining_Room
       - service: notify.my_pushbullet
         data_template:
-        title: "Last_Light_Scene is On"
+          title: "HASSIO"
+          message: "Last_Light_Scene is On"
 
   - alias: First_Light_Scene
     trigger:
@@ -55,7 +56,8 @@
           - group.security_lights
       - service: notify.my_pushbullet
         data_template:
-        title: "Last_Light_Scene is Off"
+          title: "HASSIO"
+          message: "Last_Light_Scene is Off"
 
   - alias: Bedtime_Scene
     trigger:
@@ -72,7 +74,8 @@
             - switch.Sunroom
       - service: notify.my_pushbullet
         data_template:
-        title: "Bedtime_Scene fired"
+          title: "HASSIO"
+          message: "Bedtime_Scene fired"
 
   - alias: 'Office Motion'
 
