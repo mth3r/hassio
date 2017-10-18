@@ -129,6 +129,14 @@ arlo:
 tts:
   - platform: google
 
+  tts:
+  - platform: amazon_polly
+    aws_access_key_id: !secret Amazon_Key_ID
+    aws_secret_access_key: !secret Amazon_Access_Key
+    profile_name: AWS_PROFILE
+    region_name: 'us-east-1'
+    voice: Joanna
+
 ring:
   username: !secret outlook_username
   password: !secret E_password
@@ -171,27 +179,18 @@ media_player:
     client_id: !secret spotify_client_ID
     client_secret: !secret spotify_client_secret
 
-input_boolean:
-  trigger_first_light:
-    name: Waiting for Sunrise
-    icon: mdi:weather-sunset-up
-
-input_boolean:
-  trigger_last_light:
-    name: Waiting for Sunset
-    icon: mdi:weather-sunset-down
-input_boolean:
-  trigger_bedtime:
-    name: bedtime
-    icon: mdi:hotel
+notify:
+  - name: my_pushbullet
+    platform: pushbullet
+    api_key: !secret pushbullet_key
 
 group: !include groups.yaml
 automation: !include automations.yaml
-#script: !include scripts.yaml
-switch: !include switches.yaml
+input_boolean: !include input_booleans.yaml
+script: !include_dir_merge_named script
 zone: !include zones.yaml
 sensor: !include sensors.yaml
 camera: !include cameras.yaml
 binary_sensor: !include binary_sensors.yaml
-#customize_glob: !include customize_glob.yaml
 #time_date_sensor: !include time_date_sensors.yaml
+#script: !include scripts.yaml
