@@ -96,6 +96,9 @@ default_view:
     - group.climate
     - group.energy
     - group.Motion
+    - automation.garage_motion_pushbullet
+    - automation.office_motion_pushbullet
+    - automation.office_motion
 
 Media Player:
   view: yes
