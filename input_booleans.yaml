@@ -1,0 +1,7 @@
+- trigger_light:
+    name: Waiting for Sunrise
+    icon: mdi:weather-sunset-up
+
+- trigger_bedtime:
+    name: bedtime
+    icon: mdi:hotel

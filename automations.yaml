@@ -1,4 +1,4 @@
-  - alias: Sunrise
+  - alias: Sunrise_Trigger
     trigger:
       platform: sun
       event: sunrise
@@ -9,7 +9,7 @@
       - service: homeassistant.turn_on
         entity_id: input_boolean.trigger_first_light
 
-  - alias: Sunset Trigger
+  - alias: Sunset_Trigger
     trigger:
       - platform: numeric_state
         entity_id: sun.sun
@@ -21,7 +21,7 @@
       - service: homeassistant.turn_on
         entity_id: input_boolean.trigger_last_light
 
-  - alias: Goodnight
+  - alias: Goodnight_Trigger
     trigger:
       platform: time
       at: '22:30:00'
@@ -32,10 +32,10 @@
         entity_id: input_boolean.trigger_bedtime
 
 
-  - alias: Last_Light
+  - alias: Last_Light_Scene
     trigger:
       - platform: state
-        entity_id: input_boolean.trigger_last_light
+        entity_id: input_boolean.trigger_light
         to: 'on'
     action:
       - service: switch.turn_on
@@ -45,11 +45,11 @@
           - switch.Piano_Front
           - switch.Dining_Room
 
-  - alias: First_Light
+  - alias: First_Light_Scene
     trigger:
       - platform: state
-        entity_id: input_boolean.trigger_first_light
-        to: 'on'
+        entity_id: input_boolean.trigger_light
+        to: 'off'
     action:
       - service: switch.turn_off
         entity_id:
@@ -58,7 +58,7 @@
           - switch.Piano_Front
           - switch.Dining_Room
 
-  - alias: Bedtime
+  - alias: Bedtime_Scene
     trigger:
       - platform: state
         entity_id: input_boolean.trigger_bedtime
