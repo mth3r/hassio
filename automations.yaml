@@ -5,9 +5,9 @@
         offset: "-00:45:00"
     action:
       - service: input_boolean.turn_off
-        entity_id: input_boolean.trigger_bedtime
-      - service: input_boolean.turn_off
-        entity_id: input_boolean.trigger_light
+        entity_id:
+          - input_boolean.trigger_bedtime
+          - input_boolean.trigger_light
 
   - alias: Sunset_Trigger
     trigger:
@@ -26,7 +26,6 @@
     action:
       - service: input_boolean.turn_on
         entity_id: input_boolean.trigger_bedtime
-
 
   - alias: Last_Light_Scene
     trigger:
@@ -86,8 +85,7 @@
     action:
       - service: script.speech_engine
         data_template:
-          DoorOpened: "The {{ trigger.to_state.attributes.friendly_name }} has been dectected }}."
-
+          DoorOpened: "The {{ trigger.to_state.attributes.friendly_name }} has been opened."
   - alias: 'Office Motion pushbullet'
     trigger:
       - platform: state

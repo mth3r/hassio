@@ -191,5 +191,7 @@ zone: !include zones.yaml
 sensor: !include sensors.yaml
 camera: !include cameras.yaml
 binary_sensor: !include binary_sensors.yaml
+switch: !include switches.yaml
+#customize: !include customize.yaml
 #time_date_sensor: !include time_date_sensors.yaml
 #script: !include scripts.yaml

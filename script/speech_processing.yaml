@@ -14,6 +14,10 @@ speech_processing:
         topic: 'polly/lastmsg'
         payload: 'This Message is from {{now().strftime("%-I")}}:{{now().strftime("%M")}} {{now().strftime("%p")}}. {{speech_message}}'
         retain: true
+    - service: notify.my_pushbullet
+      data_template:
+        title: 'speech_processing'
+        message: "gosh!"
     - service: tts.amazon_polly_say
       entity_id: media_player.office_home
       data_template:

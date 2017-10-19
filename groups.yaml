@@ -99,6 +99,13 @@ default_view:
     - automation.garage_motion_pushbullet
     - automation.office_motion_pushbullet
     - automation.office_motion
+    - automation.Bedtime_Scene
+    - automation.First_Light_Scene
+    - automation.Last_Light_Scene
+    - automation.Sunrise_Trigger
+    - automation.Sunset_Trigger
+    - automation.Goodnight_Trigger
+
 
 Media Player:
   view: yes
