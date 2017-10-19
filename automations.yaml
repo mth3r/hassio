@@ -76,6 +76,7 @@
           title: "HASSIO"
           message: "Bedtime_Scene fired"
 
+
   - alias: 'Office Motion'
     trigger:
       - platform: state
@@ -85,7 +86,8 @@
     action:
       - service: script.speech_engine
         data_template:
-          DoorOpened: "The {{ trigger.to_state.attributes.friendly_name }} has been opened."
+          DoorOpened: "The door has been opened."
+
   - alias: 'Office Motion pushbullet'
     trigger:
       - platform: state
@@ -96,7 +98,7 @@
       - service: notify.my_pushbullet
         data_template:
           title: "HASSIO"
-          message: "Office Motion"
+          message: "Temperature is {{states('sensor.garage_temp')}}."
 
   - alias: 'garage Motion pushbullet'
     trigger:

@@ -9,15 +9,10 @@
 
 speech_processing:
   sequence:
-    - service: mqtt.publish
-      data_template:
-        topic: 'polly/lastmsg'
-        payload: 'This Message is from {{now().strftime("%-I")}}:{{now().strftime("%M")}} {{now().strftime("%p")}}. {{speech_message}}'
-        retain: true
     - service: notify.my_pushbullet
       data_template:
         title: "speech_processing"
-        message: "gosh!"
+        message: "speech fired"
     - service: tts.amazon_polly_say
       entity_id: media_player.office_home
       data_template:
@@ -26,7 +21,9 @@ speech_processing:
           {{speech_message}}
           </speak>
         cache: true
+
     - service: tts.google_say
       entity_id: media_player.office_home
       data:
         message: 'May the Force be with you.'
+        cache: true
