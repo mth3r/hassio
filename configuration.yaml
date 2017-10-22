@@ -120,7 +120,6 @@ sun:
 #sensor:
 #  - platform: yr
 
-
 arlo:
   username: !secret gmail_username
   password: !secret E_password
