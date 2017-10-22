@@ -24,6 +24,11 @@
       - 'date_time'
       - 'time_date'
 
+  - platform: travisci
+    github_token: !secret Github_api_key
+
+  - platform: uptime
+    
   - platform: mqtt
     name: Garage Temp
     state_topic: "smartthings/Garage Motion/temperature"
