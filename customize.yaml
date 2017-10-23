@@ -1,3 +1,9 @@
+switch.sunroom:
+  google_assistant: true
+  google_assistant_name: office light
+  aliases:
+    - office mood light
+
 binary_sensor.floorplan:
   custom_ui_state_card: floorplan
   config:

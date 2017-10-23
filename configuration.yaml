@@ -192,11 +192,14 @@ notify:
 
 # Example configuration.yaml entry
 
-#google_assistant:
-#  project_id: my-hassio-project-183720
-#  client_id: !secret Google_Assistant_ClientID
-#  access_token: [a different long URL safe random string]
-#  expose_by_default: true
+google_assistant:
+  project_id: my-hassio-project-183720
+  client_id: !secret Google_Assistant_ClientID
+  access_token: !secret Google_Assistant_access_token
+  exposed_domains:
+  - switch
+  - light
+  - group
 
 group: !include groups.yaml
 automation: !include automations.yaml
