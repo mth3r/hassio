@@ -23,9 +23,9 @@ frontend:
 config:
 
 http:
-  #base_url: https://hertzhome.duckdns.org:8123
-  ssl_certificate: ssl/fullchain.pem
-  ssl_key: ssl/privkey.pem
+  base_url: https://hertzhome.duckdns.org:8123
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
   # Uncomment this to add a password (recommended!)
   api_password: !secret api_password
 
