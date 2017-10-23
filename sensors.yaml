@@ -24,8 +24,8 @@
       - 'date_time'
       - 'time_date'
 
-  - platform: travisci
-    github_token: !secret Github_api_key
+  #- platform: travisci
+  #  github_token: !secret Github_api_key
 
   - platform: uptime
 

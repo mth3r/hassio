@@ -2,8 +2,8 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: 38.7462
-  longitude: -77.4903
+  latitude: !secret home_lat
+  longitude: !secret home_long
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 81
   # metric for Metric, imperial for Imperial
@@ -23,8 +23,14 @@ frontend:
 config:
 
 http:
+  #base_url: https://hertzhome.duckdns.org:8123
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
   # Uncomment this to add a password (recommended!)
   api_password: !secret api_password
+
+
+
   # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
   # base_url: example.duckdns.org:8123
 
@@ -128,12 +134,12 @@ arlo:
 tts:
   - platform: google
 
-  - platform: amazon_polly
-    aws_access_key_id: !secret Amazon_Key_ID
-    aws_secret_access_key: !secret Amazon_Access_Key
-    profile_name: AWS_PROFILE
-    region_name: 'us-east-1'
-    voice: Joanna
+#  - platform: amazon_polly
+#    aws_access_key_id: !secret Amazon_Key_ID
+#    aws_secret_access_key: !secret Amazon_Access_Key
+#    profile_name: AWS_PROFILE
+#    region_name: 'us-east-1'
+#    voice: Joanna
 
 ring:
   username: !secret outlook_username
@@ -181,6 +187,14 @@ notify:
   - name: my_pushbullet
     platform: pushbullet
     api_key: !secret pushbullet_key
+
+# Example configuration.yaml entry
+
+#google_assistant:
+#  project_id: my-hassio-project-183720
+#  client_id: !secret Google_Assistant_ClientID
+#  access_token: [a different long URL safe random string]
+#  expose_by_default: true
 
 group: !include groups.yaml
 automation: !include automations.yaml
