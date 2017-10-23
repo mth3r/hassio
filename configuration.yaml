@@ -22,6 +22,8 @@ frontend:
 # Enables configuration UI
 config:
 
+
+
 http:
   base_url: https://hertzhome.duckdns.org:8123
   ssl_certificate: /ssl/fullchain.pem
