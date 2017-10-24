@@ -26,8 +26,8 @@ config:
 
 http:
   base_url: https://hertzhome.duckdns.org:8123
-  ssl_certificate: /ssl/fullchain.pem
-  ssl_key: /ssl/privkey.pem
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
   # Uncomment this to add a password (recommended!)
   api_password: !secret api_password
 
@@ -192,11 +192,15 @@ notify:
 
 # Example configuration.yaml entry
 
-#google_assistant:
-#  project_id: my-hassio-project-183720
-#  client_id: !secret Google_Assistant_ClientID
-#  access_token: [a different long URL safe random string]
-#  expose_by_default: true
+google_assistant:
+  project_id: hertz-automation
+  client_id: !secret Google_Assistant_ClientID
+  access_token: !secret Google_Assistant_access_token
+  exposed_domains:
+  - switch
+  - light
+  - group
+  - cover
 
 group: !include groups.yaml
 automation: !include automations.yaml
