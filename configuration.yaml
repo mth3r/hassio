@@ -197,10 +197,10 @@ google_assistant:
   client_id: !secret Google_Assistant_ClientID
   access_token: !secret Google_Assistant_access_token
   exposed_domains:
-  - switch
-  - light
-  - group
-  - cover
+    - switch
+    - light
+    - group
+    - cover
 
 group: !include groups.yaml
 automation: !include automations.yaml
