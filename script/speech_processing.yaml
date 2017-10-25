@@ -9,19 +9,6 @@
 
 speech_processing:
   sequence:
-    - service: notify.my_pushbullet
-      data_template:
-        title: "speech_processing"
-        message: "speech fired"
-    - service: tts.amazon_polly_say
-      entity_id: media_player.office_home
-      data_template:
-        message: >
-          <speak>
-          {{speech_message}}
-          </speak>
-        cache: true
-
     - service: tts.google_say
       entity_id: media_player.office_home
       data:
