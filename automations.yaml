@@ -77,16 +77,24 @@
           message: "Bedtime_Scene fired"
 
 
+
   - alias: 'Office Motion'
     trigger:
       - platform: state
         entity_id:
           - binary_sensor.office_motion
         to: 'on'
+
     action:
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.alert_mode
+
       - service: script.speech_engine
         data_template:
-          DoorOpened: "The door has been opened."
+          DoorOpened: "Welcome to the Office."
+          call_garage_check: 1
+          #call_no_announcement: 1
+
 
   #- alias: 'Office Motion pushbullet'
   #  trigger:

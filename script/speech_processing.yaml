@@ -16,6 +16,7 @@ speech_processing:
     - service: tts.google_say
       entity_id: media_player.office_home
       data:
+        message: "{{speech_message}}"
         cache: true
     - service: notify.my_pushbullet
       data_template:
