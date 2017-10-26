@@ -138,7 +138,7 @@ speech_engine:
               {{outside_weather()}}
             {%endif%}
             {{ DoorOpened }}
-            {{ DoorClosed }}s
+            {{ DoorClosed }}
             {% if call_dark_outside == 1 %}
             {{ dark_outside() }}
             {%endif%}

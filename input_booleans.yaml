@@ -10,3 +10,8 @@
     name: Speech Notifications
     icon: mdi:speaker-wireless
     initial: on
+
+  alert_mode:
+    name: Alert Mode
+    icon: mdi:alert-octagram
+    initial: off
