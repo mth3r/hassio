@@ -15,7 +15,6 @@ homeassistant:
 
 # Enables the frontend
 frontend:
-
 # Enables configuration UI
 config:
 
