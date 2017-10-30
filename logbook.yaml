@@ -1,0 +1,30 @@
+# View all events in a logbook
+  exclude:
+    domains:
+      -group
+    entities:
+# Arlo Cameras
+      - sensor.captured_today_basement
+      - sensor.captured_today_front_door
+      - sensor.captured_today_kitchen
+      - sensor.last_basement
+      - sensor.last_front_door
+      - sensor.last_kitchen
+# Placeholders
+      - binary_sensor.floorplan
+      - camera.basement
+      - camera.main_level
+# Garage Doors
+      - sensor.mom_garage_door_time_in_state
+      - sensor.dad_garage_door_time_in_state
+      - cover.garage_door_opener
+      - cover.garage_door_opener_right
+# Environmental
+      - sensor.dark_sky_daily_high_temperature
+      - sensor.dark_sky_daily_low_temperature
+      - sensor.date
+      - sensor.date__time
+      - sensor.time
+      - sensor.time__date
+# Other
+      - media_player.home_group
