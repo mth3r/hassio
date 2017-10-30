@@ -25,7 +25,7 @@ config:
 
 
 http:
-  base_url: https://hertzhome.duckdns.org:8123
+  base_url: !secret http_url
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
   # Uncomment this to add a password (recommended!)
