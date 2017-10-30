@@ -149,6 +149,7 @@ ring:
 
 mqtt:
   discovery: true
+  discovery_prefix: homeassistant
 
 splunk:
   token: !secret splunk_token
@@ -199,7 +200,6 @@ google_assistant:
   exposed_domains:
     - switch
     - light
-    - group
     - cover
 
 group: !include groups.yaml
