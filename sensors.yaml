@@ -28,6 +28,7 @@
   #  github_token: !secret Github_api_key
 
   - platform: uptime
+    unit_of_measurement: hours
 
   - platform: mqtt
     name: Garage Temp
