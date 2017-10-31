@@ -1,0 +1,26 @@
+  - alias: Sunset_Trigger
+    trigger:
+      - platform: numeric_state
+        entity_id: sun.sun
+        value_template: '{{ state.attributes.elevation }}'
+        below: -2.5
+    action:
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.trigger_light
+
+  - alias: Last_Light_Scene
+    trigger:
+      - platform: state
+        entity_id: input_boolean.trigger_light
+        to: 'on'
+    action:
+      - service: switch.turn_on
+        entity_id:
+          - group.security_lights
+          - switch.Piano_Back
+          - switch.Piano_Front
+          - switch.Dining_Room
+      - service: logbook.log
+        data_template:
+          name: Last_Light_Scene
+          message: Last_Light_Scene fired

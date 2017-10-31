@@ -1,0 +1,24 @@
+  - alias: Sunrise_Trigger
+    trigger:
+      - platform: sun
+        event: sunrise
+        offset: "-00:45:00"
+    action:
+      - service: input_boolean.turn_off
+        entity_id:
+          - input_boolean.trigger_bedtime
+          - input_boolean.trigger_light
+          - input_boolean.trigger_garage_doors
+  - alias: First_Light_Scene
+    trigger:
+      - platform: state
+        entity_id: input_boolean.trigger_light
+        to: 'off'
+    action:
+      - service: switch.turn_off
+        entity_id:
+          - group.security_lights
+      - service: logbook.log
+        data_template:
+          name: First_Light_Scene
+          message: First_Light_Scene fired

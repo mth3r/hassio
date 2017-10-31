@@ -1,0 +1,25 @@
+  - alias: Goodnight_Trigger
+    trigger:
+      platform: time
+      at: '22:30:00'
+    action:
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.trigger_bedtime
+
+  - alias: Bedtime_Scene
+    trigger:
+      - platform: state
+        entity_id: input_boolean.trigger_bedtime
+        to: 'on'
+    action:
+      - service: switch.turn_off
+        entity_id:
+            - switch.Piano_Back
+            - switch.Piano_Front
+            - switch.Dining_Room
+            - switch.Basement_Switch
+            - switch.Sunroom
+      - service: logbook.log
+        data_template:
+          name: Bedtime_Scene
+          message: Bedtime_Scene fired

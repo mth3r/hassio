@@ -1,0 +1,22 @@
+  - alias: Garage_Door_Trigger
+    trigger:
+      platform: time
+      at: '20:30:00'
+    action:
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.trigger_garage_doors
+
+  - alias: 'Secure_House'
+    trigger:
+      - platform: state
+        entity_id: input_boolean.trigger_garage_doors
+        to: 'on'
+    action:
+      - service: switch.turn_off
+        entity_id:
+          - cover.garage_door_opener
+          - cover.garage_door_opener_right
+      - service: logbook.log
+        data_template:
+          name: Secure_House
+          message: Secure_House fired
