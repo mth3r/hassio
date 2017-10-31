@@ -1,0 +1,10 @@
+ring_pressed:
+  sequence:
+    - service: logbook.log
+      data:
+        name: "Ring Doorbell:"
+        message: "Someone Pressed the Doorbell."
+
+    - service: script.speech_engine
+      data:
+        value1: 'Please check the Front Door.  Someone Pressed the Doorbell.'
