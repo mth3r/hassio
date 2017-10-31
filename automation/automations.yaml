@@ -144,6 +144,15 @@
           name: Office
           message: Motion detected
 
+  - alias: 'Ring Doorbell Activity'
+    hide_entity: True
+    trigger:
+      - platform: state
+        entity_id:
+          - binary_sensor.ring_front_door_ding
+        to: 'on'
+    action:
+      - service: script.ring_pressed
 
   #- alias: 'Office Motion pushbullet'
   #  trigger:

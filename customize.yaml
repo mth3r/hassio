@@ -136,4 +136,8 @@ sensor.mom_garage_door_time_in_state:
   icon: mdi:timer-sand
 sensor.dad_garage_door_time_in_state:
   icon: mdi:timer-sand
+
+script.ring_pressed:
+  friendly_name: 'Ring Pressed'
+  hidden: True
 #sensor.arlo_cameras: {}
