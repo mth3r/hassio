@@ -1,8 +1,8 @@
-switch.sunroom:
-  google_assistant: true
-  google_assistant_name: office light
-  aliases:
-    - office mood light
+#switch.sunroom:
+#  google_assistant: true
+#  google_assistant_name: office light
+#  aliases:
+#    - office mood light
 
 binary_sensor.floorplan:
   custom_ui_state_card: floorplan
@@ -127,9 +127,11 @@ binary_sensor.floorplan:
       - sensor.floorplan_date
       - sensor.floorplan_time
 cover.garage_door_opener:
-  friendly_name: Dad Garage
+  friendly_name: Dads Garage
+  device_class: garage
 cover.garage_door_opener_right:
-  friendly_name: Mom Garage
+  friendly_name: Moms Garage
+  device_class: garage
 sensor.mom_garage_door_time_in_state:
   icon: mdi:timer-sand
 sensor.dad_garage_door_time_in_state:

@@ -13,37 +13,20 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
 
-# Show links to resources in log and frontend
-#introduction:
-
 # Enables the frontend
 frontend:
 
 # Enables configuration UI
 config:
 
-
-
 http:
-  base_url: https://hertzhome.duckdns.org:8123
-  ssl_certificate: /ssl/fullchain.pem
-  ssl_key: /ssl/privkey.pem
+  base_url: !secret http_url
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
   # Uncomment this to add a password (recommended!)
   api_password: !secret api_password
 
-
-
-  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-  # base_url: example.duckdns.org:8123
-
-# Checks for available updates
-# Note: This component will send some information about your system to
-# the developers to assist with development of Home Assistant.
-# For more information, please see:
-# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
 updater:
-  # Optional, allows Home Assistant developers to focus on popular components.
-  # include_used_components: true
 
 # Discover some devices automatically
 discovery:
@@ -51,82 +34,8 @@ discovery:
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
-# Enables support for tracking state changes over time
-history:
-  exclude:
-    domains:
-      -group
-    entities:
-# Arlo Cameras
-      - sensor.captured_today_basement
-      - sensor.captured_today_front_door
-      - sensor.captured_today_kitchen
-      - sensor.last_basement
-      - sensor.last_front_door
-      - sensor.last_kitchen
-      - sensor.arlo_cameras
-# Garage Doors
-      - sensor.mom_garage_door_time_in_state
-      - sensor.dad_garage_door_time_in_state
-      - cover.garage_door_opener
-      - cover.garage_door_opener_right
-      - sensor.dad_garage_door_status
-      - sensor.mom_garage_door_status
-# Placeholders
-      - binary_sensor.floorplan
-      - camera.basement
-      - camera.main_level
-# Environmental
-      - sensor.dark_sky_daily_high_temperature
-      - sensor.dark_sky_daily_low_temperature
-      - sensor.date
-      - sensor.date__time
-      - sensor.time
-      - sensor.time__date
-# Other
-      - media_player.home_group
-      - remote.treadmill
-      - remote.basement
-
-# View all events in a logbook
-logbook:
-  exclude:
-    domains:
-      -group
-    entities:
-# Arlo Cameras
-      - sensor.captured_today_basement
-      - sensor.captured_today_front_door
-      - sensor.captured_today_kitchen
-      - sensor.last_basement
-      - sensor.last_front_door
-      - sensor.last_kitchen
-# Placeholders
-      - binary_sensor.floorplan
-      - camera.basement
-      - camera.main_level
-# Garage Doors
-      - sensor.mom_garage_door_time_in_state
-      - sensor.dad_garage_door_time_in_state
-      - cover.garage_door_opener
-      - cover.garage_door_opener_right
-# Environmental
-      - sensor.dark_sky_daily_high_temperature
-      - sensor.dark_sky_daily_low_temperature
-      - sensor.date
-      - sensor.date__time
-      - sensor.time
-      - sensor.time__date
-# Other
-      - media_player.home_group
-
-
 # Track the sun
 sun:
-
-# Weather prediction
-#sensor:
-#  - platform: yr
 
 arlo:
   username: !secret gmail_username
@@ -136,23 +45,17 @@ arlo:
 tts:
   - platform: google
 
-#  - platform: amazon_polly
-#    aws_access_key_id: !secret Amazon_Key_ID
-#    aws_secret_access_key: !secret Amazon_Access_Key
-#    profile_name: AWS_PROFILE
-#    region_name: 'us-east-1'
-#    voice: Joanna
-
 ring:
   username: !secret outlook_username
   password: !secret E_password
 
 mqtt:
   discovery: true
+  discovery_prefix: homeassistant
 
 splunk:
   token: !secret splunk_token
-  host: 192.168.1.30
+  host: !secret splunk_ip
  #source="http:hassio 2" (index="homeassistant")
 
 device_tracker:
@@ -190,16 +93,14 @@ notify:
     platform: pushbullet
     api_key: !secret pushbullet_key
 
-# Example configuration.yaml entry
-
 google_assistant:
-  project_id: my-hassio-project-183720
+  project_id: hertz-automation
   client_id: !secret Google_Assistant_ClientID
   access_token: !secret Google_Assistant_access_token
   exposed_domains:
-  - switch
-  - light
-  - group
+    - switch
+    - light
+    - cover
 
 group: !include groups.yaml
 automation: !include automations.yaml
@@ -210,6 +111,5 @@ sensor: !include sensors.yaml
 camera: !include cameras.yaml
 binary_sensor: !include binary_sensors.yaml
 switch: !include switches.yaml
-#customize: !include customize.yaml
-#time_date_sensor: !include time_date_sensors.yaml
-#script: !include scripts.yaml
+history: !include history.yaml
+logbook: !include logbook.yaml
