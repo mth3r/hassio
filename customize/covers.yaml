@@ -1,0 +1,6 @@
+cover.garage_door_opener:
+  friendly_name: Dads Garage
+  device_class: garage
+cover.garage_door_opener_right:
+  friendly_name: Moms Garage
+  device_class: garage

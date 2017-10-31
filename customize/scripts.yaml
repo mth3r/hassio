@@ -1,0 +1,3 @@
+script.ring_pressed:
+  friendly_name: 'Ring Pressed'
+  hidden: True
