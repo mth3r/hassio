@@ -39,10 +39,10 @@
           - switch.Piano_Back
           - switch.Piano_Front
           - switch.Dining_Room
-      - service: notify.my_pushbullet
+      - service: logbook.log
         data_template:
-          title: "HASSIO"
-          message: "Last_Light_Scene is On"
+          name: Last_Light_Scene
+          message: Last_Light_Scene fired
 
   - alias: First_Light_Scene
     trigger:
@@ -53,10 +53,10 @@
       - service: switch.turn_off
         entity_id:
           - group.security_lights
-      - service: notify.my_pushbullet
+      - service: logbook.log
         data_template:
-          title: "HASSIO"
-          message: "Last_Light_Scene is Off"
+          name: First_Light_Scene
+          message: First_Light_Scene fired
 
   - alias: Bedtime_Scene
     trigger:
@@ -71,10 +71,10 @@
             - switch.Dining_Room
             - switch.Basement_Switch
             - switch.Sunroom
-      - service: notify.my_pushbullet
+      - service: logbook.log
         data_template:
-          title: "HASSIO"
-          message: "Bedtime_Scene fired"
+          name: Bedtime_Scene
+          message: Bedtime_Scene fired
 
 
 
@@ -94,6 +94,10 @@
           DoorOpened: "Welcome to the Office."
           call_garage_check: 1
           #call_no_announcement: 1
+      - service: logbook.log
+        data_template:
+          name: Office
+          message: Motion detected
 
 
   #- alias: 'Office Motion pushbullet'
