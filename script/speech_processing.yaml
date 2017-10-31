@@ -12,18 +12,13 @@ speech_processing:
     - service: notify.my_pushbullet
       data_template:
         title: "speech_processing"
-        message: "speech fired"
-    - service: tts.amazon_polly_say
-      entity_id: media_player.office_home
-      data_template:
-        message: >
-          <speak>
-          {{speech_message}}
-          </speak>
-        cache: true
-
+        message: "pre-speech fired {{speech_message}} !!"
     - service: tts.google_say
       entity_id: media_player.office_home
       data:
-        message: 'May the Force be with you.'
+        message: "{{speech_message}}"
         cache: true
+    - service: notify.my_pushbullet
+      data_template:
+        title: "speech_processing"
+        message: "post-speech fired {{speech_message}} !!"
