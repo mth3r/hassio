@@ -6,6 +6,9 @@
     name: bedtime
     icon: mdi:hotel
 
+  trigger_garage_doors:
+    name: garage doors
+
   speech_notifications:
     name: Speech Notifications
     icon: mdi:speaker-wireless

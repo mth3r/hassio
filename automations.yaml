@@ -8,6 +8,7 @@
         entity_id:
           - input_boolean.trigger_bedtime
           - input_boolean.trigger_light
+          - input_boolean.trigger_garage_doors
 
   - alias: Sunset_Trigger
     trigger:
@@ -26,6 +27,14 @@
     action:
       - service: input_boolean.turn_on
         entity_id: input_boolean.trigger_bedtime
+
+  - alias: Garage_Door_Trigger
+    trigger:
+      platform: time
+      at: '20:30:00'
+    action:
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.trigger_garage_doors
 
   - alias: Last_Light_Scene
     trigger:
@@ -76,7 +85,45 @@
           name: Bedtime_Scene
           message: Bedtime_Scene fired
 
+  - alias: 'Garage Opened Log'
 
+    trigger:
+      - platform: state
+        entity_id:
+          - cover.garage_door_opener
+          - cover.garage_door_opener_right
+        from: 'closed'
+        to: 'open'
+        for: '00:05:00'
+
+    action:
+      - service: logbook.log
+        data_template:
+          name: Garage_Doors
+          message: Doors Opened longer than 5 min
+
+      #- service_template: >
+      #   {% set hour=states("sensor.time").split(':')[0] | int %}
+      #   {% if hour >= 7 and hour <= 9 and states.input_boolean.school_mode.state == 'on'%}
+      #     input_boolean.turn_off
+      #   {% else %}
+      #      input_boolean.turn_on
+      #   {% endif %}
+      #  entity_id: input_boolean.alert_mode
+  - alias: 'Secure_House'
+    trigger:
+      - platform: state
+        entity_id: input_boolean.trigger_garage_doors
+        to: 'on'
+    action:
+      - service: switch.turn_off
+        entity_id:
+          - cover.garage_door_opener
+          - cover.garage_door_opener_right
+      - service: logbook.log
+        data_template:
+          name: Secure_House
+          message: Secure_House fired
 
   - alias: 'Office Motion'
     trigger:
@@ -84,11 +131,9 @@
         entity_id:
           - binary_sensor.office_motion
         to: 'on'
-
     action:
       - service: input_boolean.turn_on
         entity_id: input_boolean.alert_mode
-
       - service: script.speech_engine
         data_template:
           DoorOpened: "Welcome to the Office."
