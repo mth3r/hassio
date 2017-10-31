@@ -1,0 +1,7 @@
+Climate:
+  name: Climate
+  entities:
+    - sensor.netatmo_main_level_temperature
+    - sensor.netatmo_outdoor_temperature
+    - sensor.office_temp
+    - sensor.garage_temp

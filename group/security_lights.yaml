@@ -1,0 +1,7 @@
+Security_Lights:
+  name: Security Lights
+  entities:
+    - switch.back_flood
+    - switch.Sunroom_Flood
+    - switch.Kitchen_Patio
+    - switch.Front_Porch

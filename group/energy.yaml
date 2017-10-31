@@ -1,0 +1,5 @@
+Energy:
+  name: Energy
+  entities:
+    - sensor.volts
+    - sensor.energy

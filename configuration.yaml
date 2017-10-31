@@ -101,7 +101,7 @@ google_assistant:
     - light
     - cover
 
-group: !include groups.yaml
+group: !include_dir_merge_named group
 automation: !include_dir_merge_list automation
 input_boolean: !include input_booleans.yaml
 script: !include_dir_merge_named script

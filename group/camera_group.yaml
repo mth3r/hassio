@@ -1,0 +1,6 @@
+Camera_Group:
+  name: Cameras
+  entities:
+    - sensor.last_front_door
+    - sensor.last_basement
+    - sensor.last_kitchen

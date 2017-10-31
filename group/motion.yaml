@@ -1,0 +1,8 @@
+Motion:
+  name: Motion
+  entities:
+    - sensor.last_front_door
+    - sensor.last_basement
+    - sensor.last_kitchen
+    - binary_sensor.office_motion
+    - binary_sensor.garage_motion

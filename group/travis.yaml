@@ -1,0 +1,6 @@
+Travis:
+  name: Travis
+  entities:
+    - sensor.travis_status
+    - sensor.travis_status_timestamp
+    - sensor.travis_status_label
