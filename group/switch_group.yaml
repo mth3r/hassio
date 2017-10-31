@@ -1,4 +1,4 @@
-Switch_group:
+switch_group:
   name: Switches
   entities:
     - switch.upstairs_landing

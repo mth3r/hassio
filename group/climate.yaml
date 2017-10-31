@@ -1,4 +1,4 @@
-Climate:
+climate:
   name: Climate
   entities:
     - sensor.netatmo_main_level_temperature

@@ -1,4 +1,4 @@
-Camera_Group:
+camera_group:
   name: Cameras
   entities:
     - sensor.last_front_door

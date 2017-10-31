@@ -1,0 +1,6 @@
+pi-hole:
+  view: yes
+  name: pi-hole
+  icon: mdi:fire
+  entities:
+    - group.firewall

@@ -1,4 +1,4 @@
-Motion:
+motion:
   name: Motion
   entities:
     - sensor.last_front_door

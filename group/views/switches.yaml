@@ -1,0 +1,7 @@
+switches:
+  view: yes
+  name: Switch
+  icon: mdi:lamp
+  entities:
+    - group.Switch_group
+    - group.security_lights

@@ -1,4 +1,4 @@
-Automation_Group:
+automation_group:
   name: Automations
   entities:
     - automation.garage_motion_pushbullet

@@ -1,0 +1,6 @@
+garage_door_dad:
+  name: Garage Door Dad
+  entities:
+    - cover.garage_door_opener
+    - sensor.dad_garage_door_status
+    - sensor.dad_garage_door_time_in_state

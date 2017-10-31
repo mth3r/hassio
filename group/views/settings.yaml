@@ -1,0 +1,9 @@
+settings:
+  view: yes
+  name: Settings
+  icon: mdi:settings
+  entities:
+      - group.climate
+      - group.energy
+      - group.travis
+      - group.Automation_Group

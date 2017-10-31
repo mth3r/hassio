@@ -1,0 +1,9 @@
+apple:
+  view: yes
+  name: AppleTV
+  icon: mdi:apple
+  entities:
+    - remote.basement
+    - remote.treadmill
+    - media_player.treadmill
+    - media_player.basement

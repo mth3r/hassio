@@ -1,4 +1,4 @@
-Firewall:
+firewall:
   name: Firewall
   entities:
     - sensor.pihole_ads_blocked_today

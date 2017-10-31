@@ -1,0 +1,14 @@
+default_view:
+  view: yes
+  icon: mdi:home
+  entities:
+    - media_player.home_group
+    - sensor.dark_sky_temperature
+    - device_tracker.mhertz_iphone
+    - device_tracker.mhertz_mlu_iphone
+    - device_tracker.mhertz_jlu_iphone
+    - group.garage_door_mom
+    - group.garage_door_dad
+    - group.climate
+    - group.energy
+    - group.Motion

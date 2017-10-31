@@ -1,4 +1,4 @@
-Travis:
+travis:
   name: Travis
   entities:
     - sensor.travis_status
