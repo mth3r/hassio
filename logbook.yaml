@@ -28,3 +28,6 @@
       - sensor.time__date
 # Other
       - media_player.home_group
+      - sensor.floorplan_time
+      - sensor.travis_status_timestamp
+      - sensor.netatmo_wind_guage_angle

@@ -3,6 +3,7 @@ settings:
   name: Settings
   icon: mdi:settings
   entities:
+      - sensor.uptime
       - group.climate
       - group.energy
       - group.travis

@@ -99,6 +99,19 @@
   - platform: pi_hole
     host: !secret pi-hole_ip
 
+  - platform: rest
+    name: strava1
+    resource:  https://www.strava.com/api/v3/activities
+    method: GET
+    headers:
+      access_token: !secret strava_access_token
+      client_secret: !secret strava_client_secret
+      code: !secret strava_code
+    #value_template: '{{ value_json[0].elev_high | multiply(3.280839895) | round(1) }}'
+    unit_of_measurement: ft
+    scan_interval: 300
+
+
   - platform: template
     sensors:
       dad_garage_door_status:
