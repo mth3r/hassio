@@ -100,16 +100,34 @@
     host: !secret pi-hole_ip
 
   - platform: rest
-    name: strava1
-    resource:  https://www.strava.com/api/v3/activities
+    name: strava_distance
+    resource:  !secret strava_url
     method: GET
-    headers:
-      access_token: !secret strava_access_token
-      client_secret: !secret strava_client_secret
-      code: !secret strava_code
-    #value_template: '{{ value_json[0].elev_high | multiply(3.280839895) | round(1) }}'
-    unit_of_measurement: ft
-    scan_interval: 300
+    value_template: '{{ value_json[0].distance | multiply(0.000621371) | round(3) }}'
+    unit_of_measurement: miles
+    scan_interval: 3600
+
+  - platform: rest
+    name: strava_moving_time
+    resource:  !secret strava_url
+    method: GET
+    value_template: '{{ value_json[0].moving_time | multiply(0.01666666) | round(3) }}'
+    unit_of_measurement: minutes
+    scan_interval: 3600
+
+  - platform: rest
+    name: strava_average_heartrate
+    resource:  !secret strava_url
+    method: GET
+    value_template: '{{ value_json[0].average_heartrate  }}'
+    scan_interval: 3600
+
+  - platform: rest
+    name: strava_type
+    resource:  !secret strava_url
+    method: GET
+    value_template: '{{ value_json[0].type  }}'
+    scan_interval: 3600
 
 
   - platform: template
