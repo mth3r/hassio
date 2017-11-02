@@ -36,7 +36,8 @@
 
       - service: script.speech_engine
         data_template:
-          DoorOpened: "The {{ trigger.to_state.attributes.friendly_name }} has been {{ (trigger.to_state.state)|replace('_', ' ') }}."
+          #DoorOpened: "The {{ trigger.to_state.attributes.friendly_name }} has been {{ (trigger.to_state.state)|replace('_', ' ') }}."
+          DoorOpened: "Welcome to the office"
           #call_garage_check: 1
           #call_no_announcement: 1
 
@@ -61,5 +62,3 @@
     #    data_template:
     #      title: "HASSIO"
     #      message: "Temperature is {{states('sensor.garage_temp')}}."
-
-  

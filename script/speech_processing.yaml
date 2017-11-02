@@ -9,11 +9,6 @@
 
 speech_processing:
   sequence:
-    - service: logbook.log
-      data_template:
-        name: pre-speech
-        message: "{{ speech_message }}"
-
     - service: tts.google_say
       entity_id: media_player.office_home
       data:
@@ -22,5 +17,5 @@ speech_processing:
 
     - service: logbook.log
       data_template:
-        name: post-speech
-        message: "Test {{ speech_message }}!!"
+        name: Speech Log
+        message: "{{ speech_message }}"
