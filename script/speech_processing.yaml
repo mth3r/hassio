@@ -9,13 +9,18 @@
 
 speech_processing:
   sequence:
+    - service: logbook.log
       data_template:
-        title: "speech_processing"
-        message: "pre-speech fired {{speech_message}} !!"
+        name: pre-speech
+        message: "{{ speech_message }}"
+
     - service: tts.google_say
       entity_id: media_player.office_home
       data:
+        message: "{{ speech_message }}"
         cache: true
+
+    - service: logbook.log
       data_template:
-        title: "speech_processing"
-        message: "post-speech fired {{speech_message}} !!"
+        name: post-speech
+        message: "Test {{ speech_message }}!!"

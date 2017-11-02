@@ -1,90 +1,3 @@
-  # - alias: Sunrise_Trigger
-    # trigger:
-      # - platform: sun
-        # event: sunrise
-        # offset: "-00:45:00"
-    # action:
-      # - service: input_boolean.turn_off
-        # entity_id:
-          # - input_boolean.trigger_bedtime
-          # - input_boolean.trigger_light
-          # - input_boolean.trigger_garage_doors
-
-  # - alias: Sunset_Trigger
-    # trigger:
-      # - platform: numeric_state
-        # entity_id: sun.sun
-        # value_template: '{{ state.attributes.elevation }}'
-        # below: -2.5
-    # action:
-      # - service: input_boolean.turn_on
-        # entity_id: input_boolean.trigger_light
-
-  # - alias: Goodnight_Trigger
-    # trigger:
-      # platform: time
-      # at: '22:30:00'
-    # action:
-      # - service: input_boolean.turn_on
-        # entity_id: input_boolean.trigger_bedtime
-
-  # - alias: Garage_Door_Trigger
-    # trigger:
-      # platform: time
-      # at: '20:30:00'
-    # action:
-      # - service: input_boolean.turn_on
-        # entity_id: input_boolean.trigger_garage_doors
-
-  # - alias: Last_Light_Scene
-    # trigger:
-      # - platform: state
-        # entity_id: input_boolean.trigger_light
-        # to: 'on'
-    # action:
-      # - service: switch.turn_on
-        # entity_id:
-          # - group.security_lights
-          # - switch.Piano_Back
-          # - switch.Piano_Front
-          # - switch.Dining_Room
-      # - service: logbook.log
-        # data_template:
-          # name: Last_Light_Scene
-          # message: Last_Light_Scene fired
-
-  # - alias: First_Light_Scene
-    # trigger:
-      # - platform: state
-        # entity_id: input_boolean.trigger_light
-        # to: 'off'
-    # action:
-      # - service: switch.turn_off
-        # entity_id:
-          # - group.security_lights
-      # - service: logbook.log
-        # data_template:
-          # name: First_Light_Scene
-          # message: First_Light_Scene fired
-
-  # - alias: Bedtime_Scene
-    # trigger:
-      # - platform: state
-        # entity_id: input_boolean.trigger_bedtime
-        # to: 'on'
-    # action:
-      # - service: switch.turn_off
-        # entity_id:
-            # - switch.Piano_Back
-            # - switch.Piano_Front
-            # - switch.Dining_Room
-            # - switch.Basement_Switch
-            # - switch.Sunroom
-      # - service: logbook.log
-        # data_template:
-          # name: Bedtime_Scene
-          # message: Bedtime_Scene fired
-
   - alias: 'Garage Opened Log'
 
     trigger:
@@ -110,20 +23,6 @@
       #      input_boolean.turn_on
       #   {% endif %}
       #  entity_id: input_boolean.alert_mode
-  # - alias: 'Secure_House'
-    # trigger:
-      # - platform: state
-        # entity_id: input_boolean.trigger_garage_doors
-        # to: 'on'
-    # action:
-      # - service: switch.turn_off
-        # entity_id:
-          # - cover.garage_door_opener
-          # - cover.garage_door_opener_right
-      # - service: logbook.log
-        # data_template:
-          # name: Secure_House
-          # message: Secure_House fired
 
   - alias: 'Office Motion'
     trigger:
@@ -134,15 +33,12 @@
     action:
       - service: input_boolean.turn_on
         entity_id: input_boolean.alert_mode
+
       - service: script.speech_engine
         data_template:
-          DoorOpened: "Welcome to the Office."
-          call_garage_check: 1
+          DoorOpened: "The {{ trigger.to_state.attributes.friendly_name }} has been {{ (trigger.to_state.state)|replace('_', ' ') }}."
+          #call_garage_check: 1
           #call_no_announcement: 1
-      - service: logbook.log
-        data_template:
-          name: Office
-          message: Motion detected
 
   - alias: 'Ring Doorbell Activity'
     hide_entity: True
@@ -166,14 +62,4 @@
     #      title: "HASSIO"
     #      message: "Temperature is {{states('sensor.garage_temp')}}."
 
-  #- alias: 'garage Motion pushbullet'
-  #  trigger:
-  #    - platform: state
-  #      entity_id:
-  #        - binary_sensor.garage_motion
-  #      to: 'on'
-  #  action:
-  #    - service: notify.my_pushbullet
-  #      data_template:
-  #        title: "HASSIO"
-  #        message: "Garage Motion"
+  
