@@ -31,3 +31,4 @@
       - sensor.floorplan_time
       - sensor.travis_status_timestamp
       - sensor.netatmo_wind_guage_angle
+      - sensor.netatmo_wind_gust_angle

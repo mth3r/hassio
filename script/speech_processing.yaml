@@ -11,7 +11,7 @@ speech_processing:
   sequence:
     - service: tts.google_say
       entity_id: media_player.office_home
-      data:
+      data_template:
         message: "{{ speech_message }}"
         cache: true
 

@@ -27,12 +27,16 @@
   - alias: 'Office Motion'
     trigger:
       - platform: state
-        entity_id:
-          - binary_sensor.office_motion
+        entity_id: binary_sensor.office_motion
         to: 'on'
+    condition:
+      condition: state
+      entity_id: input_boolean.alert_mode
+      state: 'on'
     action:
-      - service: input_boolean.turn_on
-        entity_id: input_boolean.alert_mode
+      - service: input_boolean.turn_off
+        entity_id:
+          - input_boolean.alert_mode
 
       - service: script.speech_engine
         data_template:
@@ -45,11 +49,22 @@
     hide_entity: True
     trigger:
       - platform: state
-        entity_id:
-          - binary_sensor.ring_front_door_ding
+        entity_id: binary_sensor.ring_front_door_ding
         to: 'on'
     action:
       - service: script.ring_pressed
+
+  - alias: 'Reset Alert Mode'
+    trigger:
+      - platform: state
+        entity_id: input_boolean.alert_mode
+        to: 'off'
+        for:
+          minutes: 25
+    action:
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.alert_mode
+
 
   #- alias: 'Office Motion pushbullet'
   #  trigger:
