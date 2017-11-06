@@ -7,3 +7,4 @@ apple:
     - remote.treadmill
     - media_player.treadmill
     - media_player.basement
+    - camera.foscam  

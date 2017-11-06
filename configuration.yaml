@@ -100,12 +100,22 @@ google_assistant:
     - switch
     - light
     - cover
+    
 
 microsoft_face:
   api_key: !secret api_face
   azure_region: eastus
-
-
+  
+image_processing:
+  - platform: microsoft_face_detect
+    name: face_dectect
+    source:
+      - entity_id: camera.foscam
+  - platform: microsoft_face_identify
+    name: face_identify
+    group: family
+    source:
+      - entity_id: camera.foscam
 
 group: !include_dir_merge_named group
 automation: !include_dir_merge_list automation

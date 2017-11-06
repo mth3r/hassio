@@ -1,2 +1,13 @@
 #  - platform: arlo
 #    ffmpeg_arguments: ‘-filter:v setpts=40.0*PTS’
+
+- platform: foscam
+  ip: !secret foscam_IP
+  username: !secret foscam_username
+  password: !secret foscam_password
+  name: foscam
+
+#- platform: mjpeg
+#  mjpeg_url: !secret mjpeg_url
+#  still_image_url: mjpeg_still
+#  name: foscam_mjpeg
