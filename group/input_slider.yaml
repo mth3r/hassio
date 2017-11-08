@@ -1,0 +1,7 @@
+input_slider:
+  name: Input Slider
+  entities:
+    - input_number.haswitchplate_pagebutton1_page
+    - input_number.haswitchplate_pagebutton2_page
+    - input_number.haswitchplate_pagebutton3_page
+    - input_number.haswitchplate_active_page

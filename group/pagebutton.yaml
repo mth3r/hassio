@@ -1,0 +1,6 @@
+pagebutton:
+  name: Input Text
+  entities:
+    - input_text.haswitchplate_pagebutton1_label
+    - input_text.haswitchplate_pagebutton2_label
+    - input_text.haswitchplate_pagebutton3_label

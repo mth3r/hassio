@@ -106,22 +106,86 @@ microsoft_face:
   api_key: !secret api_face
   azure_region: eastus
 
-image_processing:
-  - platform: microsoft_face_detect
-    name: face_dectect
-    source:
-      - entity_id: camera.foscam
-  - platform: microsoft_face_identify
-    name: face_identify
-    group: family
-    source:
-      - entity_id: camera.foscam
+#image_processing:
+#  - platform: microsoft_face_detect
+#    name: face_dectect
+#    source:
+#      - entity_id: camera.foscam
+#  - platform: microsoft_face_identify
+#    name: face_identify
+#    group: family
+#    source:
+#      - entity_id: camera.foscam
+
 dialogflow:
 
 intent_script:
   getTempOffice:
     speech:
       text: The temperature in the office {{ states('sensor.office_temp') }} degrees
+input_text:
+  haswitchplate_pagebutton1_label:
+    name: HASP Page Button 1 Label
+    icon: mdi:book-open-page-variant
+  haswitchplate_pagebutton2_label:
+    name: HASP Page Button 2 Label
+    icon: mdi:book-open-page-variant
+  haswitchplate_pagebutton3_label:
+    name: HASP Page Button 3 Label
+    icon: mdi:book-open-page-variant
+input_number:
+  haswitchplate_pagebutton1_page:
+    name: HASP Page Button 1 Page
+    icon: mdi:format-list-numbers
+    min: 0
+    max: 9
+    step: 1
+  haswitchplate_pagebutton2_page:
+    name: HASP Page Button 2 Page
+    icon: mdi:format-list-numbers
+    min: 0
+    max: 9
+    step: 1
+  haswitchplate_pagebutton3_page:
+    name: HASP Page Button 3 Page
+    icon: mdi:format-list-numbers
+    min: 0
+    max: 9
+    step: 1
+  haswitchplate_active_page:
+    name: HASP Active Page
+    icon: mdi:format-list-numbers
+    min: 0
+    max: 9
+    step: 1
+  haswitchplate_alarmcode1:
+    name: AlarmCode1
+    icon: mdi:format-list-numbers
+    min: -1
+    max: 9
+    step: 1
+    initial: -1
+  haswitchplate_alarmcode2:
+    name: AlarmCode2
+    icon: mdi:format-list-numbers
+    min: -1
+    max: 9
+    step: 1
+    initial: -1
+  haswitchplate_alarmcode3:
+    name: AlarmCode3
+    icon: mdi:format-list-numbers
+    min: -1
+    max: 9
+    step: 1
+    initial: -1
+  haswitchplate_alarmcode4:
+    name: AlarmCode4
+    icon: mdi:format-list-numbers
+    min: -1
+    max: 9
+    step: 1
+    initial: -1
 
 group: !include_dir_merge_named group
 automation: !include_dir_merge_list automation

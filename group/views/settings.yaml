@@ -8,3 +8,5 @@ settings:
       - group.energy
       - group.travis
       - group.Automation_Group
+      - group.pagebutton
+      - group.input_slider
