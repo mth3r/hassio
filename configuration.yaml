@@ -102,9 +102,9 @@ google_assistant:
     - cover
 
 
-microsoft_face:
-  api_key: !secret api_face
-  azure_region: eastus
+#microsoft_face:
+#  api_key: !secret api_face
+#  azure_region: eastus
 
 #image_processing:
 #  - platform: microsoft_face_detect
@@ -198,3 +198,4 @@ binary_sensor: !include binary_sensors.yaml
 switch: !include switches.yaml
 history: !include history.yaml
 logbook: !include logbook.yaml
+scene: !include_dir_merge_list scenes/
