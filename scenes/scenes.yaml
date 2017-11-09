@@ -23,7 +23,6 @@
 
 - name: Night
   entities:
-  entities:
     switch.sunroom:
       state: on
     light.haswitchplate:
