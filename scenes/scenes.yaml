@@ -31,7 +31,6 @@
 
 - name: Lights Off
   entities:
-  entities:
     switch.sunroom:
       state: off
     light.haswitchplate:

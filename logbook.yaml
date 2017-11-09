@@ -1,7 +1,9 @@
 # View all events in a logbook
   exclude:
     domains:
-      -group
+      - group
+      - automation
+      - input_number
     entities:
 # Arlo Cameras
       - sensor.captured_today_basement

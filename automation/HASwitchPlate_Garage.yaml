@@ -1,0 +1,63 @@
+- alias: HASwitchPlate_Garage
+  trigger:
+  - platform: state
+    entity_id: sensor.dark_sky_temperature
+  - platform: mqtt
+    topic: 'homeassistant/binary_sensor/HASwitchPlate/state'
+    payload: 'ON'
+  - platform: homeassistant
+    event: start
+  action:
+  - service: mqtt.publish
+    data:
+      topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[4].txt'
+      payload_template: '"{{states.cover.garage_door_opener.state}}"'
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[5].txt'
+      payload_template: '"{{states.cover.garage_door_opener_right.state}}"'
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[6].font'
+      payload: '3'
+  - service: mqtt.publish
+    data:
+      topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[6].txt'
+      payload_template: '"garage: {{states.sensor.garage_temp.state }}"'
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[7].txt'
+      payload_template: '"office: {{states.sensor.office_temp.state }}"'
+      retain: true
+
+
+- alias: HASwitchPlate_Garage_Mom
+  trigger:
+    platform: mqtt
+    topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[6].b[4]'
+    payload: 'ON'
+  action:
+    - service: logbook.log
+      data_template:
+        name: HASwitchPlate
+        message: Garage Mom Button Pressed
+    - service: switch.turn_off
+      entity_id:
+        - cover.garage_door_opener_right
+
+- alias: HASwitchPlate_Garage_Dad
+  trigger:
+    platform: mqtt
+    topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[6].b[5]'
+    payload: 'ON'
+  action:
+    - service: logbook.log
+      data_template:
+        name: HASwitchPlate
+        message: Garage Dad Button Pressed
+    - service: switch.turn_off
+      entity_id:
+        - cover.garage_door_opener

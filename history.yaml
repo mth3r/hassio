@@ -1,7 +1,9 @@
 # Enables support for tracking state changes over time
   exclude:
     domains:
-      -group
+      - group
+      - automation
+      - input_number
     entities:
 # Arlo Cameras
       - sensor.captured_today_basement
