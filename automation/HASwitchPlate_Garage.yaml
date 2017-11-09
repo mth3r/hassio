@@ -20,10 +20,6 @@
       retain: true
   - service: mqtt.publish
     data:
-      topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[6].font'
-      payload: '3'
-  - service: mqtt.publish
-    data:
       topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[6].txt'
       payload_template: '"garage: {{states.sensor.garage_temp.state }}"'
       retain: true
