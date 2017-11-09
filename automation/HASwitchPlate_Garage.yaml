@@ -26,7 +26,7 @@
   - service: mqtt.publish
     data:
       topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[6].font'
-      payload_template: '2'
+      payload_template: '1'
       retain: true
   - service: mqtt.publish
     data:
