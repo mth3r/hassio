@@ -40,11 +40,15 @@
     platform: mqtt
     topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[6].b[4]'
     payload: 'ON'
+  condition:
+    condition: state
+    entity_id: cover.garage_door_opener_right
+    state: 'closed'
   action:
     - service: logbook.log
       data_template:
         name: HASwitchPlate
-        message: Garage Mom Button Pressed
+        message: Garage Mom Button Pressed!
     - service: switch.turn_off
       entity_id:
         - cover.garage_door_opener_right
@@ -54,11 +58,15 @@
     platform: mqtt
     topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[6].b[5]'
     payload: 'ON'
+  condition:
+    condition: state
+    entity_id: cover.garage_door_opener
+    state: 'closed'
   action:
     - service: logbook.log
       data_template:
         name: HASwitchPlate
-        message: Garage Dad Button Pressed
+        message: Garage Dad Button Pressed!
     - service: switch.turn_off
       entity_id:
         - cover.garage_door_opener
