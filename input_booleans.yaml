@@ -18,3 +18,43 @@
     name: Alert Mode
     icon: mdi:alert-octagram
     initial: on
+
+  mom_garage:
+    name: mom garage
+    initial: on
+
+  dad_garage:
+    name: dad garage
+    initial: on
+
+  jackie:
+    name: jackie
+    initial: on
+
+  isaac:
+    name: isaac
+    initial: on
+
+  alice:
+    name: alice
+    initial: on
+
+  luke:
+    name: luke
+    initial: on
+
+  controls_b8:
+    name: b8
+    initial: off
+
+  controls_b9:
+    name: b9
+    initial: off
+
+  controls_b10:
+    name: b10
+    initial: off
+
+  controls_b11:
+    name: b11
+    initial: off

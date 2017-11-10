@@ -10,3 +10,4 @@ settings:
       - group.Automation_Group
       - group.pagebutton
       - group.input_slider
+      - input_boolean.alert_mode
