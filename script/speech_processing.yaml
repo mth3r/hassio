@@ -10,11 +10,15 @@
 speech_processing:
   sequence:
     - service: tts.google_say
-      entity_id: media_player.office_home
       data_template:
+        entity_id: >
+          {%- if states.input_boolean.intercom_whole_house.state == 'on' -%}
+            group.intercom_group
+          {% else %}
+            media_player.office_home
+          {%- endif -%}
         message: "{{ speech_message }}"
         cache: true
-
     - service: logbook.log
       data_template:
         name: Speech Log

@@ -1,0 +1,7 @@
+intercom_group:
+  name: Intercom
+  entities:
+    - media_player.office_home
+    - media_player.living_room_home
+    - media_player.basement_speaker
+    - media_player.sunroom_speakers

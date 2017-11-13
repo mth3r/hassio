@@ -1,0 +1,5 @@
+upstairs_group:
+  name: Upstairs Group
+  entities:
+    - switch.jackie_bedroom
+    - switch.upstairs_landing

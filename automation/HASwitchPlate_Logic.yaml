@@ -1,0 +1,52 @@
+# Button text/font
+- alias: HASwitchPlate_Logic_button_8_on
+  trigger:
+    - platform: state
+      entity_id:
+        - group.security_lights
+      to: 'on'
+  action:
+    - service: mqtt.publish
+      data:
+        topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[8].bco'
+        payload_template: '65504'
+        retain: true
+
+- alias: HASwitchPlate_Logic_button_9_on
+  trigger:
+    - platform: state
+      entity_id:
+        - group.upstairs_lights
+      to: 'on'
+  action:
+    - service: mqtt.publish
+      data:
+        topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[9].bco'
+        payload_template: '65504'
+        retain: true
+
+- alias: HASwitchPlate_Logic_button_8_off
+  trigger:
+    - platform: state
+      entity_id:
+        - group.security_lights
+      to: 'off'
+  action:
+    - service: mqtt.publish
+      data:
+        topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[8].bco'
+        payload_template: '65535'
+        retain: true
+
+- alias: HASwitchPlate_Logic_button_9_off
+  trigger:
+    - platform: state
+      entity_id:
+        - group.upstairs_lights
+      to: 'off'
+  action:
+    - service: mqtt.publish
+      data:
+        topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[9].bco'
+        payload_template: '65535'
+        retain: true

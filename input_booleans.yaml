@@ -17,7 +17,7 @@
   alert_mode:
     name: Alert Mode
     icon: mdi:alert-octagram
-    initial: on
+    initial: off
 
   mom_garage:
     name: mom garage
@@ -43,6 +43,14 @@
     name: luke
     initial: on
 
+  intercom_alert_mode:
+    name: intercom alert
+    initial: on
+
+  intercom_whole_house:
+    name: intercom whole house
+    initial: off
+
   controls_b8:
     name: b8
     initial: off
@@ -58,3 +66,7 @@
   controls_b11:
     name: b11
     initial: off
+
+  intercom_all:
+    name: intercom_all
+    initial: on

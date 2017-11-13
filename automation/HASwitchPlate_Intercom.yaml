@@ -23,6 +23,10 @@
     data:
       topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[7].b[13].txt'
       payload: '"Luke"'
+  - service: mqtt.publish
+    data:
+      topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[7].b[15].txt'
+      payload: '"All"'
 
 
 - alias: HASwitchPlate_Jackie
@@ -94,7 +98,7 @@
 - alias: HASwitchPlate_Luke
   trigger:
     platform: mqtt
-    topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[7].b[4]'
+    topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[7].b[13]'
     payload: 'ON'
   condition:
     condition: and
@@ -111,7 +115,29 @@
         - input_boolean.luke
     - service: script.speech_engine
       data_template:
-        Intercom: "Luke, Please come to the kitchen"
+        Intercom: "Luke Hertz, Please come to the canteen.  Luke Hertz to the canteen."
+
+- alias: HASwitchPlate_All
+  trigger:
+    platform: mqtt
+    topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[7].b[15]'
+    payload: 'ON'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.intercom_alert_mode
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.intercom_all
+        state: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id:
+        - input_boolean.intercom_all
+    - service: script.speech_engine
+      data_template:
+        Intercom: "Everyone, please come to the Kitchen.  Everyone to the kitchen"
 
 - alias: HASwitchPlate_Jackie_Reset
   trigger:
@@ -156,3 +182,14 @@
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.luke
+
+- alias: HASwitchPlate_All_Reset
+  trigger:
+    - platform: state
+      entity_id: input_boolean.intercom_all
+      to: 'off'
+      for:
+        seconds: 5
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.intercom_all

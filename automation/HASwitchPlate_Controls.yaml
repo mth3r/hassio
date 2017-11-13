@@ -19,7 +19,7 @@
   - service: mqtt.publish
     data:
       topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[10].txt'
-      payload_template: '"Downstairs"'
+      payload_template: '"MainFloor"'
       retain: true
   - service: mqtt.publish
     data:
@@ -36,11 +36,7 @@
       topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[10].font'
       payload_template: '0'
       retain: true
-  - service: mqtt.publish
-    data:
-      topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[10].bco'
-      payload_template: '0'
-      retain: true
+
 ##########################################################################
 ##########################################################################
 ##########################################################################
@@ -53,6 +49,7 @@
     topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[6].b[8]'
     payload: 'ON'
   condition:
+    condition: state
     entity_id: input_boolean.controls_b8
     state: 'off'
   action:
@@ -62,27 +59,24 @@
         message: Button 8
     - service: switch.turn_on
       entity_id:
-        - switch.back_flood
-        - switch.Sunroom_Flood
-        - switch.Kitchen_Patio
-        - switch.Front_Porch
+        - group.security_lights
     - service: mqtt.publish
       data:
         topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[8].bco'
-        payload_template: '63488'
+        payload_template: '65504'
         retain: true
     - service: input_boolean.turn_on
       entity_id: input_boolean.controls_b8
-
 
 - alias: HASwitchPlate_Controls_Button_9_On
   trigger:
     platform: mqtt
     topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[6].b[9]'
     payload: 'ON'
-    condition:
-      entity_id: input_boolean.controls_b9
-      state: 'off'
+  condition:
+    condition: state
+    entity_id: input_boolean.controls_b9
+    state: 'off'
   action:
     - service: logbook.log
       data_template:
@@ -90,12 +84,11 @@
         message: Button 9
     - service: switch.turn_on
       entity_id:
-        - switch.jackie_bedroom
-        - switch.upstairs_landing
+        - group.upstairs_lights
     - service: mqtt.publish
       data:
         topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[9].bco'
-        payload_template: '63488'
+        payload_template: '65504'
         retain: true
     - service: input_boolean.turn_on
       entity_id: input_boolean.controls_b9
@@ -106,6 +99,7 @@
     topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[6].b[10]'
     payload: 'ON'
   condition:
+    condition: state
     entity_id: input_boolean.controls_b10
     state: 'off'
   action:
@@ -115,7 +109,7 @@
         message: Button 10
     - service: switch.turn_on
       entity_id:
-        - switch.basement_swith
+        - switch.basement_switch
         - switch.dining_room
         - switch.kitchen_back
         - switch.kitchen_front
@@ -125,7 +119,7 @@
     - service: mqtt.publish
       data:
         topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[10].bco'
-        payload_template: '63488'
+        payload_template: '65504'
         retain: true
     - service: input_boolean.turn_on
       entity_id: input_boolean.controls_b10
@@ -136,13 +130,14 @@
     topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[6].b[11]'
     payload: 'ON'
   condition:
+    condition: state
     entity_id: input_boolean.controls_b11
     state: 'off'
   action:
     - service: logbook.log
       data_template:
         name: HASwitchPlate
-        message: Button 10
+        message: Button 11
     - service: switch.turn_on
       entity_id:
         - switch.back_flood
@@ -151,7 +146,7 @@
         - switch.Front_Porch
         - switch.jackie_bedroom
         - switch.upstairs_landing
-        - switch.basement_swith
+        - switch.basement_switch
         - switch.dining_room
         - switch.kitchen_back
         - switch.kitchen_front
@@ -161,26 +156,26 @@
     - service: mqtt.publish
       data:
         topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[11].bco'
-        payload_template: '63488'
+        payload_template: '65504'
         retain: true
     - service: input_boolean.turn_on
       entity_id: input_boolean.controls_b11
 
-##########################################################################
-##########################################################################
-##########################################################################
-##########################################################################
-##########################################################################
-##########################################################################
 
 
-
+# ##########################################################################
+# ##########################################################################
+# ##########################################################################
+# ##########################################################################
+# ##########################################################################
+# ##########################################################################
 - alias: HASwitchPlate_Controls_Button_8_Off
   trigger:
     platform: mqtt
     topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[6].b[8]'
     payload: 'ON'
   condition:
+    condition: state
     entity_id: input_boolean.controls_b8
     state: 'on'
   action:
@@ -197,20 +192,20 @@
     - service: mqtt.publish
       data:
         topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[8].bco'
-        payload_template: '0'
+        payload_template: '65535'
         retain: true
     - service: input_boolean.turn_off
       entity_id: input_boolean.controls_b8
-
 
 - alias: HASwitchPlate_Controls_Button_9_Off
   trigger:
     platform: mqtt
     topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[6].b[9]'
     payload: 'ON'
-    condition:
-      entity_id: input_boolean.controls_b9
-      state: 'on'
+  condition:
+    condition: state
+    entity_id: input_boolean.controls_b9
+    state: 'on'
   action:
     - service: logbook.log
       data_template:
@@ -223,7 +218,7 @@
     - service: mqtt.publish
       data:
         topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[9].bco'
-        payload_template: '0'
+        payload_template: '65535'
         retain: true
     - service: input_boolean.turn_off
       entity_id: input_boolean.controls_b9
@@ -234,6 +229,7 @@
     topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[6].b[10]'
     payload: 'ON'
   condition:
+    condition: state
     entity_id: input_boolean.controls_b10
     state: 'on'
   action:
@@ -243,7 +239,7 @@
         message: Button 10
     - service: switch.turn_off
       entity_id:
-        - switch.basement_swith
+        - switch.basement_switch
         - switch.dining_room
         - switch.kitchen_back
         - switch.kitchen_front
@@ -253,7 +249,7 @@
     - service: mqtt.publish
       data:
         topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[10].bco'
-        payload_template: '0'
+        payload_template: '65535'
         retain: true
     - service: input_boolean.turn_off
       entity_id: input_boolean.controls_b10
@@ -264,13 +260,14 @@
     topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[6].b[11]'
     payload: 'ON'
   condition:
+    condition: state
     entity_id: input_boolean.controls_b11
     state: 'on'
   action:
     - service: logbook.log
       data_template:
         name: HASwitchPlate
-        message: Button 10
+        message: Button 11
     - service: switch.turn_off
       entity_id:
         - switch.back_flood
@@ -279,7 +276,7 @@
         - switch.Front_Porch
         - switch.jackie_bedroom
         - switch.upstairs_landing
-        - switch.basement_swith
+        - switch.basement_switch
         - switch.dining_room
         - switch.kitchen_back
         - switch.kitchen_front
@@ -289,7 +286,7 @@
     - service: mqtt.publish
       data:
         topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[11].bco'
-        payload_template: '0'
+        payload_template: '65535'
         retain: true
     - service: input_boolean.turn_off
       entity_id: input_boolean.controls_b11
