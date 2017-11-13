@@ -58,10 +58,7 @@
         message: Button 8
     - service: switch.turn_off
       entity_id:
-        - switch.back_flood
-        - switch.Sunroom_Flood
-        - switch.Kitchen_Patio
-        - switch.Front_Porch
+        - group.security_lights
     - service: mqtt.publish
       data:
         topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[8].bco'

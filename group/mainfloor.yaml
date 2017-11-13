@@ -1,0 +1,10 @@
+main_level_group:
+  name: MainFloor Group
+  entities:
+    - switch.basement_switch
+    - switch.dining_room
+    - switch.kitchen_back
+    - switch.kitchen_front
+    - switch.piano_back
+    - switch.piano_front
+    - switch.sunroom

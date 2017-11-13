@@ -27,10 +27,6 @@
         entity_id: input_boolean.dad_garage
         state: 'on'
   action:
-    - service: logbook.log
-      data_template:
-        name: HASwitchPlate
-        message: Garage Dad Button Pressed to open!
     - service: mqtt.publish
       data:
         topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[4].txt'
@@ -57,10 +53,6 @@
         entity_id: input_boolean.dad_garage
         state: 'on'
   action:
-    - service: logbook.log
-      data_template:
-        name: HASwitchPlate
-        message: Garage Dad Button Pressed to close!
     - service: mqtt.publish
       data:
         topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[4].txt'
@@ -71,24 +63,3 @@
     - service: input_boolean.turn_off
       entity_id:
         - input_boolean.dad_garage
-
-- alias: HASwitchPlate_Garage_Dad_Display_open
-  trigger:
-    - platform: state
-      entity_id: cover.garage_door_opener
-      to: 'open'
-  action:
-    - service: mqtt.publish
-      data:
-        topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[4].txt'
-        payload_template: '"open"'
-- alias: HASwitchPlate_Garage_Dad_Display_close
-  trigger:
-    - platform: state
-      entity_id: cover.garage_door_opener
-      to: 'closed'
-  action:
-    - service: mqtt.publish
-      data:
-        topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[4].txt'
-        payload_template: '"closed"'

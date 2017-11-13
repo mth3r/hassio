@@ -28,19 +28,8 @@
         message: Button 11
     - service: switch.turn_on
       entity_id:
-        - switch.back_flood
-        - switch.Sunroom_Flood
-        - switch.Kitchen_Patio
-        - switch.Front_Porch
-        - switch.jackie_bedroom
-        - switch.upstairs_landing
-        - switch.basement_switch
-        - switch.dining_room
-        - switch.kitchen_back
-        - switch.kitchen_front
-        - switch.piano_back
-        - switch.piano_front
-        - switch.sunroom
+        - group.main_level_group
+        - group.upstairs_group
     - service: mqtt.publish
       data:
         topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[11].bco'
@@ -65,19 +54,8 @@
         message: Button 11
     - service: switch.turn_off
       entity_id:
-        - switch.back_flood
-        - switch.Sunroom_Flood
-        - switch.Kitchen_Patio
-        - switch.Front_Porch
-        - switch.jackie_bedroom
-        - switch.upstairs_landing
-        - switch.basement_switch
-        - switch.dining_room
-        - switch.kitchen_back
-        - switch.kitchen_front
-        - switch.piano_back
-        - switch.piano_front
-        - switch.sunroom
+        - group.main_level_group
+        - group.upstairs_group
     - service: mqtt.publish
       data:
         topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[11].bco'

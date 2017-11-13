@@ -1,5 +1,5 @@
 # Button text/font
-- alias: HASwitchPlate_B4
+- alias: HASwitchPlate_Intercom_B4
   trigger:
   - platform: mqtt
     topic: 'homeassistant/binary_sensor/HASwitchPlate/state'

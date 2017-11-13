@@ -52,3 +52,25 @@
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.intercom_all
+
+- alias: HASwitchPlate_Garage_Mom_Delay
+  trigger:
+    - platform: state
+      entity_id: input_boolean.mom_garage
+      to: 'off'
+      for:
+        seconds: 5
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.mom_garage
+
+- alias: HASwitchPlate_Garage_Dad_Delay
+  trigger:
+    - platform: state
+      entity_id: input_boolean.dad_garage
+      to: 'off'
+      for:
+        seconds: 5
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.dad_garage

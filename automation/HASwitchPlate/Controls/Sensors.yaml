@@ -21,3 +21,29 @@
       topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[7].txt'
       payload_template: '"office: {{states.sensor.office_temp.state }}"'
       retain: true
+
+- alias: HASwitchPlate_Controls_Refresh
+  trigger:
+    platform: time
+    # Matches every minute
+    seconds: 15
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: 'binary_sensor.haswitchplate'
+        state: 'on'
+      - condition: state
+        entity_id: 'input_number.haswitchplate_active_page'
+        state: "7.0"
+  action:
+  - service: mqtt.publish
+    data:
+      topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[4].txt'
+      payload_template: '"{{states.cover.garage_door_opener.state }}"'
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[5].txt'
+      payload_template: '"{{states.cover.garage_door_opener_right.state }}"'
+      retain: true

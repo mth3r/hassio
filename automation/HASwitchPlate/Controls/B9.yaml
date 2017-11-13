@@ -58,8 +58,7 @@
         message: Button 9
     - service: switch.turn_off
       entity_id:
-        - switch.jackie_bedroom
-        - switch.upstairs_landing
+        - group.upstairs_lights
     - service: mqtt.publish
       data:
         topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[9].bco'
