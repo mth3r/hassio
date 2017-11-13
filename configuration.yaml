@@ -60,6 +60,11 @@ splunk:
 device_tracker:
   - platform: owntracks_http
 
+  - platform: unifi
+    username: !secret unifi_user
+    password: !secret unifi_password
+    host: !secret unifi_ip
+
 netatmo:
   api_key: !secret netamo_api_key
   secret_key: !secret netamo_secret_key
