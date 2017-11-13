@@ -1,0 +1,94 @@
+- alias: HASwitchPlate_Controls_B9
+  trigger:
+  - platform: mqtt
+    topic: 'homeassistant/binary_sensor/HASwitchPlate/state'
+    payload: 'ON'
+  - platform: homeassistant
+    event: start
+  action:
+  - service: mqtt.publish
+    data:
+      topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[9].txt'
+      payload_template: '"Upstairs"'
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[9].font'
+      payload_template: '0'
+      retain: true
+
+- alias: HASwitchPlate_Controls_Button_9_On
+  trigger:
+    platform: mqtt
+    topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[6].b[9]'
+    payload: 'ON'
+  condition:
+    condition: state
+    entity_id: input_boolean.controls_b9
+    state: 'off'
+  action:
+    - service: logbook.log
+      data_template:
+        name: HASwitchPlate
+        message: Button 9
+    - service: switch.turn_on
+      entity_id:
+        - group.upstairs_lights
+    - service: mqtt.publish
+      data:
+        topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[9].bco'
+        payload_template: '65504'
+        retain: true
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.controls_b9
+
+- alias: HASwitchPlate_Controls_Button_9_Off
+  trigger:
+    platform: mqtt
+    topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[6].b[9]'
+    payload: 'ON'
+  condition:
+    condition: state
+    entity_id: input_boolean.controls_b9
+    state: 'on'
+  action:
+    - service: logbook.log
+      data_template:
+        name: HASwitchPlate
+        message: Button 9
+    - service: switch.turn_off
+      entity_id:
+        - switch.jackie_bedroom
+        - switch.upstairs_landing
+    - service: mqtt.publish
+      data:
+        topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[9].bco'
+        payload_template: '65535'
+        retain: true
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.controls_b9
+
+- alias: HASwitchPlate_Logic_button_9_on
+  trigger:
+    - platform: state
+      entity_id:
+        - group.upstairs_lights
+      to: 'on'
+  action:
+    - service: mqtt.publish
+      data:
+        topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[9].bco'
+        payload_template: '65504'
+        retain: true
+- alias: HASwitchPlate_Logic_button_9_off
+  trigger:
+    - platform: state
+      entity_id:
+        - group.upstairs_lights
+      to: 'off'
+  action:
+    - service: mqtt.publish
+      data:
+        topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[9].bco'
+        payload_template: '65535'
+        retain: true

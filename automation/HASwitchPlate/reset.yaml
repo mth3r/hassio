@@ -1,0 +1,54 @@
+- alias: HASwitchPlate_Jackie_Reset
+  trigger:
+    - platform: state
+      entity_id: input_boolean.jackie
+      to: 'off'
+      for:
+        seconds: 5
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.jackie
+
+- alias: HASwitchPlate_Isaac_Reset
+  trigger:
+    - platform: state
+      entity_id: input_boolean.isaac
+      to: 'off'
+      for:
+        seconds: 5
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.isaac
+
+- alias: HASwitchPlate_Alice_Reset
+  trigger:
+    - platform: state
+      entity_id: input_boolean.alice
+      to: 'off'
+      for:
+        seconds: 5
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.alice
+
+- alias: HASwitchPlate_Luke_Reset
+  trigger:
+    - platform: state
+      entity_id: input_boolean.luke
+      to: 'off'
+      for:
+        seconds: 5
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.luke
+
+- alias: HASwitchPlate_All_Reset
+  trigger:
+    - platform: state
+      entity_id: input_boolean.intercom_all
+      to: 'off'
+      for:
+        seconds: 5
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.intercom_all

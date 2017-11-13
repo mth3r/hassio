@@ -23,6 +23,26 @@
       #      input_boolean.turn_on
       #   {% endif %}
       #  entity_id: input_boolean.alert_mode
+  - alias: 'Baseement Garage Door Log'
+
+    trigger:
+      - platform: state
+        entity_id:
+          - sensor.basement_garage_door
+        from: 'closed'
+        to: 'open'
+        for: '00:00:45'
+
+    action:
+      - service: logbook.log
+        data_template:
+          name: Basement Garage Door
+          message: Doors Opened longer than 45 seconds
+      - service: notify.my_pushbullet
+        data_template:
+          title: "Door Open Alert"
+          message: "The Door has been open for longer than 45 seconds. Temperature in Garage is {{states('sensor.garage_temp')}}. Temperature inside is {{states('sensor.inside_garage_temp')}}"
+
 
   - alias: 'Office Motion'
     trigger:

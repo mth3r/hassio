@@ -1,0 +1,94 @@
+- alias: HASwitchPlate_Controls_B4
+  trigger:
+  - platform: mqtt
+    topic: 'homeassistant/binary_sensor/HASwitchPlate/state'
+    payload: 'ON'
+  - platform: homeassistant
+    event: start
+  action:
+  - service: mqtt.publish
+    data:
+      topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[4].txt'
+      payload_template: '"{{states.cover.garage_door_opener.state}}"'
+      retain: true
+
+- alias: HASwitchPlate_Garage_Dad_Closed
+  trigger:
+    platform: mqtt
+    topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[6].b[4]'
+    payload: 'ON'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: cover.garage_door_opener
+        state: 'closed'
+      - condition: state
+        entity_id: input_boolean.dad_garage
+        state: 'on'
+  action:
+    - service: logbook.log
+      data_template:
+        name: HASwitchPlate
+        message: Garage Dad Button Pressed to open!
+    - service: mqtt.publish
+      data:
+        topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[4].txt'
+        payload_template: '"opening"'
+    - service: cover.open_cover
+      entity_id:
+        - cover.garage_door_opener
+    - service: input_boolean.turn_off
+      entity_id:
+        - input_boolean.dad_garage
+
+- alias: HASwitchPlate_Garage_Dad_Open
+  trigger:
+    platform: mqtt
+    topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[6].b[4]'
+    payload: 'ON'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: cover.garage_door_opener
+        state: 'open'
+      - condition: state
+        entity_id: input_boolean.dad_garage
+        state: 'on'
+  action:
+    - service: logbook.log
+      data_template:
+        name: HASwitchPlate
+        message: Garage Dad Button Pressed to close!
+    - service: mqtt.publish
+      data:
+        topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[4].txt'
+        payload_template: '"closing"'
+    - service: cover.close_cover
+      entity_id:
+        - cover.garage_door_opener
+    - service: input_boolean.turn_off
+      entity_id:
+        - input_boolean.dad_garage
+
+- alias: HASwitchPlate_Garage_Dad_Display_open
+  trigger:
+    - platform: state
+      entity_id: cover.garage_door_opener
+      to: 'open'
+  action:
+    - service: mqtt.publish
+      data:
+        topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[4].txt'
+        payload_template: '"open"'
+- alias: HASwitchPlate_Garage_Dad_Display_close
+  trigger:
+    - platform: state
+      entity_id: cover.garage_door_opener
+      to: 'closed'
+  action:
+    - service: mqtt.publish
+      data:
+        topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[4].txt'
+        payload_template: '"closed"'

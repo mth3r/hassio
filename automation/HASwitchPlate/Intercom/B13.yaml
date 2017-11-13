@@ -1,0 +1,35 @@
+# Button text/font
+- alias: HASwitchPlate_Intercom_B13
+  trigger:
+  - platform: mqtt
+    topic: 'homeassistant/binary_sensor/HASwitchPlate/state'
+    payload: 'ON'
+  - platform: homeassistant
+    event: start
+  action:
+  - service: mqtt.publish
+    data:
+      topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[7].b[13].txt'
+      payload: '"Luke"'
+
+- alias: HASwitchPlate_Luke
+  trigger:
+    platform: mqtt
+    topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[7].b[13]'
+    payload: 'ON'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.intercom_alert_mode
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.luke
+        state: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id:
+        - input_boolean.luke
+    - service: script.speech_engine
+      data_template:
+        Intercom: "Luke Hertz, Please come to the canteen.  Luke Hertz to the canteen."

@@ -1,0 +1,87 @@
+- alias: HASwitchPlate_Controls_B11
+  trigger:
+  - platform: mqtt
+    topic: 'homeassistant/binary_sensor/HASwitchPlate/state'
+    payload: 'ON'
+  - platform: homeassistant
+    event: start
+  action:
+  - service: mqtt.publish
+    data:
+      topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[11].txt'
+      payload_template: '"All"'
+      retain: true
+
+- alias: HASwitchPlate_Controls_Button_11_On
+  trigger:
+    platform: mqtt
+    topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[6].b[11]'
+    payload: 'ON'
+  condition:
+    condition: state
+    entity_id: input_boolean.controls_b11
+    state: 'off'
+  action:
+    - service: logbook.log
+      data_template:
+        name: HASwitchPlate
+        message: Button 11
+    - service: switch.turn_on
+      entity_id:
+        - switch.back_flood
+        - switch.Sunroom_Flood
+        - switch.Kitchen_Patio
+        - switch.Front_Porch
+        - switch.jackie_bedroom
+        - switch.upstairs_landing
+        - switch.basement_switch
+        - switch.dining_room
+        - switch.kitchen_back
+        - switch.kitchen_front
+        - switch.piano_back
+        - switch.piano_front
+        - switch.sunroom
+    - service: mqtt.publish
+      data:
+        topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[11].bco'
+        payload_template: '65504'
+        retain: true
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.controls_b11
+
+- alias: HASwitchPlate_Controls_Button_11_Off
+  trigger:
+    platform: mqtt
+    topic: 'homeassistant/haswitchplate/HASwitchPlate/state/p[6].b[11]'
+    payload: 'ON'
+  condition:
+    condition: state
+    entity_id: input_boolean.controls_b11
+    state: 'on'
+  action:
+    - service: logbook.log
+      data_template:
+        name: HASwitchPlate
+        message: Button 11
+    - service: switch.turn_off
+      entity_id:
+        - switch.back_flood
+        - switch.Sunroom_Flood
+        - switch.Kitchen_Patio
+        - switch.Front_Porch
+        - switch.jackie_bedroom
+        - switch.upstairs_landing
+        - switch.basement_switch
+        - switch.dining_room
+        - switch.kitchen_back
+        - switch.kitchen_front
+        - switch.piano_back
+        - switch.piano_front
+        - switch.sunroom
+    - service: mqtt.publish
+      data:
+        topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[6].b[11].bco'
+        payload_template: '65535'
+        retain: true
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.controls_b11
