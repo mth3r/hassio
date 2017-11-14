@@ -33,3 +33,25 @@
     - service: script.speech_engine
       data_template:
         Intercom: "Isaac, Please come to the kitchen"
+- alias: HASwitchPlate_Isaac_Away
+  trigger:
+    platform: state
+    entity_id: device_tracker.isaac_presence
+    state: 'not_home'
+  action:
+    - service: mqtt.publish
+      data:
+        topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[7].b[7].bco'
+        payload_template: '65504'
+        retain: true
+- alias: HASwitchPlate_Isaac_Home
+  trigger:
+    platform: state
+    entity_id: device_tracker.isaac_presence
+    state: 'home'
+  action:
+    - service: mqtt.publish
+      data:
+        topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[7].b[7].bco'
+        payload_template: '65535'
+        retain: true
