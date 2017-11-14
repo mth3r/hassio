@@ -3,10 +3,11 @@ default_view:
   icon: mdi:home
   entities:
     - media_player.home_group
-    - sensor.dark_sky_temperature
-    - device_tracker.mhertz_iphone
-    - device_tracker.mhertz_mlu_iphone
-    - device_tracker.mhertz_jlu_iphone
+    - device_tracker.mhertzsiphone
+    - device_tracker.marylusiphone
+    - device_tracker.jackies_gearfit
+    - device_tracker.isaac_presence
+    - device_tracker.alicehertzsipod
     - group.garage_door_mom
     - group.garage_door_dad
     - group.climate

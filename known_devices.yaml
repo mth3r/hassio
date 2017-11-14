@@ -25,3 +25,426 @@ mhertz_jlu_iphone:
   picture:
   track: true
   vendor:
+
+mhertzs_iphone:
+  hide_if_away: false
+  icon:
+  mac:
+  name: mhertzs iphone
+  picture:
+  track: true
+  vendor:
+
+chromecast_kitchen:
+  hide_if_away: false
+  icon:
+  mac: A4:77:33:F7:8E:D6
+  name: ChromeCast Kitchen
+  picture:
+  track: false
+  vendor: Google, Inc.
+
+vmb4000:
+  hide_if_away: false
+  icon:
+  mac: A0:04:60:DF:DD:63
+  name: VMB4000
+  picture:
+  track: false
+  vendor: NETGEAR
+
+apple_tv_basement:
+  hide_if_away: false
+  icon:
+  mac: B8:78:2E:54:F1:FB
+  name: Apple TV Basement
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+amazon5d4751543:
+  hide_if_away: false
+  icon:
+  mac: AC:63:BE:5C:E6:9B
+  name: amazon-5d4751543
+  picture:
+  track: false
+  vendor: Amazon Technologies Inc.
+
+googlehome_2:
+  hide_if_away: false
+  icon:
+  mac: F4:F5:D8:B5:49:6E
+  name: Google-Home
+  picture:
+  track: false
+  vendor: Google, Inc.
+
+sshmac:
+  hide_if_away: false
+  icon:
+  mac: 7C:C3:A1:B1:65:BB
+  name: ssh-mac
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+94103e4af075:
+  hide_if_away: false
+  icon:
+  mac: 94:10:3E:4A:F0:75
+  name: 94103e4af075
+  picture:
+  track: false
+  vendor: Belkin International Inc.
+
+50f14af8b0b0:
+  hide_if_away: false
+  icon:
+  mac: 50:F1:4A:F8:B0:B0
+  name: 50f14af8b0b0
+  picture:
+  track: false
+  vendor: Texas Instruments
+
+amazon4fbcc16bb:
+  hide_if_away: false
+  icon:
+  mac: FC:65:DE:3F:EE:23
+  name: amazon-4fbcc16bb
+  picture:
+  track: false
+  vendor: Amazon Technologies Inc.
+
+pscmhertz2:
+  hide_if_away: false
+  icon:
+  mac: B4:AE:2B:28:22:F9
+  name: PSC-MHERTZ2
+  picture:
+  track: true
+  vendor: Microsoft
+
+74754899d649:
+  hide_if_away: false
+  icon:
+  mac: 74:75:48:99:D6:49
+  name: 74754899d649
+  picture:
+  track: false
+  vendor: Amazon Technologies Inc.
+
+605bb4735e7d:
+  hide_if_away: false
+  icon:
+  mac: 60:5B:B4:73:5E:7D
+  name: 605bb4735e7d
+  picture:
+  track: false
+  vendor: AzureWave Technology Inc.
+
+netatmopersonalweatherstati:
+  hide_if_away: false
+  icon:
+  mac: 70:EE:50:20:B3:66
+  name: Netatmo-Personal-Weather-Stati
+  picture:
+  track: false
+  vendor: Netatmo
+
+myq1dd:
+  hide_if_away: false
+  icon:
+  mac: 64:52:99:4A:5B:D5
+  name: MyQ-1DD
+  picture:
+  track: false
+  vendor: The Chamberlain Group, Inc
+
+unificloudkey:
+  hide_if_away: false
+  icon:
+  mac: F0:9F:C2:C6:D6:7D
+  name: UniFi-CloudKey
+  picture:
+  track: false
+  vendor: Ubiquiti Networks Inc.
+
+amazon7061c19c1:
+  hide_if_away: false
+  icon:
+  mac: F0:27:2D:09:4A:44
+  name: amazon-7061c19c1
+  picture:
+  track: false
+  vendor: Amazon Technologies Inc.
+
+ring:
+  hide_if_away: false
+  icon:
+  mac: 50:F1:4A:65:32:2F
+  name: Ring
+  picture:
+  track: false
+  vendor: Texas Instruments
+
+belkin_wifi_light_switch:
+  hide_if_away: false
+  icon:
+  mac: 94:10:3E:4A:57:19
+  name: Belkin Wifi Light Switch
+  picture:
+  track: false
+  vendor: Belkin International Inc.
+
+chromecast_sunroom:
+  hide_if_away: false
+  icon:
+  mac: A4:77:33:F3:1C:7C
+  name: ChromeCast Sunroom
+  picture:
+  track: false
+  vendor: Google, Inc.
+
+alicehertzsipod:
+  hide_if_away: false
+  icon:
+  mac: A4:31:35:BC:9A:F2
+  name: Alice
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+apple_tv_family_room:
+  hide_if_away: false
+  icon:
+  mac: 70:56:81:E1:23:EC
+  name: Apple TV Family Room
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+hassio_raspberry_pi3:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:CF:A3:80
+  name: Hassio Raspberry Pi3
+  picture:
+  track: false
+  vendor: Raspberry Pi Foundation
+
+googlehome_3:
+  hide_if_away: false
+  icon:
+  mac: F4:F5:D8:B5:27:CA
+  name: Google-Home
+  picture:
+  track: false
+  vendor: Google, Inc.
+
+newhost3:
+  hide_if_away: false
+  icon:
+  mac: 94:10:3E:4A:ED:8D
+  name: new-host-3
+  picture:
+  track: false
+  vendor: Belkin International Inc.
+
+smarthings_hub:
+  hide_if_away: false
+  icon:
+  mac: D0:52:A8:17:17:6A
+  name: Smarthings Hub
+  picture:
+  track: false
+  vendor: Physical Graph Corporation
+
+googlehome_office:
+  hide_if_away: false
+  icon:
+  mac: F4:F5:D8:B5:38:E6
+  name: Google-Home Office
+  picture:
+  track: false
+  vendor: Google, Inc.
+
+jackies_gearfit:
+  hide_if_away: false
+  icon:
+  mac: 84:98:66:62:B8:C3
+  name: Jackie Hertz
+  picture:
+  track: true
+  vendor: Samsung Electronics Co.,Ltd
+
+6c0b845b0c57:
+  hide_if_away: false
+  icon:
+  mac: 6C:0B:84:5B:0C:57
+  name: 6c0b845b0c57
+  picture:
+  track: false
+  vendor: Universal Global Scientific Industrial Co., Ltd.
+
+jackiesiphone2:
+  hide_if_away: false
+  icon:
+  mac: B8:E8:56:A8:83:A0
+  name: JackiesIphone2
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+googlehome:
+  hide_if_away: false
+  icon:
+  mac: F4:F5:D8:B6:E2:AC
+  name: Google-Home
+  picture:
+  track: false
+  vendor: Google, Inc.
+
+foscam_pantile_wifi:
+  hide_if_away: false
+  icon:
+  mac: E8:AB:FA:00:BF:B2
+  name: Foscam pan/tile Wifi
+  picture:
+  track: false
+  vendor: Shenzhen Reecam Tech.Ltd.
+
+6466b34b9782:
+  hide_if_away: false
+  icon:
+  mac: 64:66:B3:4B:97:82
+  name: 6466b34b9782
+  picture:
+  track: false
+  vendor: TP-LINK TECHNOLOGIES CO.,LTD.
+
+maryLusiphone:
+  hide_if_away: false
+  icon:
+  mac: 00:DB:70:74:3F:B2
+  name: MaryLu
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+pihole:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:E8:62:51
+  name: pi-hole
+  picture:
+  track: false
+  vendor: Raspberry Pi Foundation
+
+onkyo_reciever:
+  hide_if_away: false
+  icon:
+  mac: 00:09:B0:D1:DE:2D
+  name: Onkyo Reciever
+  picture:
+  track: false
+  vendor: Onkyo Corporation
+
+printer:
+  hide_if_away: false
+  icon:
+  mac: B4:B5:2F:11:68:19
+  name: Printer
+  picture:
+  track: false
+  vendor: unknown
+
+myq186:
+  hide_if_away: false
+  icon:
+  mac: 64:52:99:4A:5B:7E
+  name: MyQ-186
+  picture:
+  track: false
+  vendor: unknown
+
+0418d67b55e0:
+  hide_if_away: false
+  icon:
+  mac: 04:18:D6:7B:55:E0
+  name: 0418d67b55e0
+  picture:
+  track: false
+  vendor: Ubiquiti Networks Inc.
+
+0418d67b55f0:
+  hide_if_away: false
+  icon:
+  mac: 04:18:D6:7B:55:F0
+  name: 0418d67b55f0
+  picture:
+  track: false
+  vendor: Ubiquiti Networks Inc.
+
+28c68efb9dc0:
+  hide_if_away: false
+  icon:
+  mac: 28:C6:8E:FB:9D:C0
+  name: 28c68efb9dc0
+  picture:
+  track: false
+  vendor: unknown
+
+mhertzsiphone:
+  hide_if_away: false
+  icon:
+  mac: BC:A9:20:A1:7A:77
+  name: Toby
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+michaelsmbp:
+  hide_if_away: false
+  icon:
+  mac: 8C:85:90:2D:F7:4C
+  name: Michaels-MBP
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+Isaac_Presence:
+  hide_if_away: false
+  icon:
+  mac: A8:81:95:A2:E6:8E
+  name: Isaac
+  picture:
+  track: true
+  vendor: Samsung Electronics Co.,Ltd
+
+0024e40e16f2:
+  hide_if_away: false
+  icon:
+  mac: 00:24:E4:0E:16:F2
+  name: 0024e40e16f2
+  picture:
+  track: false
+  vendor: Withings
+
+basement_tv:
+  hide_if_away: false
+  icon:
+  mac: 00:6B:9E:AF:88:B3
+  name: Basement TV
+  picture:
+  track: false
+  vendor: Vizio, Inc
+
+e0cb1d36f91d:
+  hide_if_away: false
+  icon:
+  mac: E0:CB:1D:36:F9:1D
+  name: e0cb1d36f91d
+  picture:
+  track: false
+  vendor: Private
