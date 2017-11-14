@@ -42,13 +42,14 @@
   condition:
   - condition: state
     entity_id: 'device_tracker.jackies_gearfit'
-    state: 'home'
+    state: 'not_home'
   action:
     - service: mqtt.publish
       data:
         topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[7].b[4].bco'
         payload_template: '65504'
         retain: true
+
 - alias: HASwitchPlate_Jackie_Home
   trigger:
     platform: time

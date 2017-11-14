@@ -37,7 +37,7 @@
   trigger:
     platform: time
     # Matches every minute
-    seconds: 30
+    seconds: 25
   condition:
   - condition: state
     entity_id: 'device_tracker.isaac_presence'
@@ -48,11 +48,12 @@
         topic: 'homeassistant/haswitchplate/HASwitchPlate/command/p[7].b[7].bco'
         payload_template: '65504'
         retain: true
+
 - alias: HASwitchPlate_Isaac_Home
   trigger:
     platform: time
     # Matches every minute
-    seconds: 30
+    seconds: 25
   condition:
   - condition: state
     entity_id: 'device_tracker.isaac_presence'

@@ -32,7 +32,7 @@
 
   - platform: mqtt
     name: Inside Garage Temp
-    state_topic: "smartthings/basement_garage door/temperature"
+    state_topic: "smartthings/basement_garage_door/temperature"
     device_class: temperature
     unit_of_measurement: "°F"
     retain: true
@@ -40,7 +40,7 @@
 
   - platform: mqtt
     name: Basement Garage Door
-    state_topic: "smartthings/basement_garage door/contact"
+    state_topic: "smartthings/basement_garage_door/contact"
     retain: true
 
   - platform: mqtt
@@ -86,13 +86,13 @@
   - platform: rest
     name: Travis Status Label
     resource: https://api.travis-ci.org/repos/mth3r/hassio/cc.json?branch=master
-    scan_interval: 60
+    scan_interval: 300
     value_template: "{{ value_json.last_build_number }}"
 
   - platform: rest
     name: Travis Status Timestamp
     resource: https://api.travis-ci.org/repos/mth3r/hassio/cc.json?branch=master
-    scan_interval: 60
+    scan_interval: 300
     value_template: "
     {% if (as_timestamp(now())-as_timestamp(value_json.last_build_finished_at )) | int <= 60 %}{{ (as_timestamp(now())-as_timestamp(value_json.last_build_finished_at )) | int }} Seconds
     {%elif (as_timestamp(now())-as_timestamp(value_json.last_build_finished_at )) | int < 3600 %}{{ (as_timestamp(now())-as_timestamp(value_json.last_build_finished_at )) | int // 60 }} Minutes
@@ -101,7 +101,7 @@
   - platform: rest
     name: Travis Status
     resource: https://api.travis-ci.org/repos/mth3r/hassio/cc.json?branch=master
-    scan_interval: 60
+    scan_interval: 300
     value_template:
       "{% if value_json.last_build_status|int(1) == 0 %}
         passed
