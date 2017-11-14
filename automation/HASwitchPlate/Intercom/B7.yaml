@@ -35,8 +35,12 @@
         Intercom: "Isaac, Please come to the kitchen"
 - alias: HASwitchPlate_Isaac_Away
   trigger:
-    platform: state
-    entity_id: device_tracker.isaac_presence
+    platform: time
+    # Matches every minute
+    seconds: 30
+  condition:
+  - condition: state
+    entity_id: 'device_tracker.isaac_presence'
     state: 'not_home'
   action:
     - service: mqtt.publish
@@ -46,8 +50,12 @@
         retain: true
 - alias: HASwitchPlate_Isaac_Home
   trigger:
-    platform: state
-    entity_id: device_tracker.isaac_presence
+    platform: time
+    # Matches every minute
+    seconds: 30
+  condition:
+  - condition: state
+    entity_id: 'device_tracker.isaac_presence'
     state: 'home'
   action:
     - service: mqtt.publish

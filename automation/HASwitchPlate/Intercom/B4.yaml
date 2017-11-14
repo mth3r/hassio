@@ -36,9 +36,13 @@
 
 - alias: HASwitchPlate_Jackie_Away
   trigger:
-    platform: state
-    entity_id: device_tracker.jackies_gearfit
-    state: 'not_home'
+    platform: time
+    # Matches every minute
+    seconds: 30
+  condition:
+  - condition: state
+    entity_id: 'device_tracker.jackies_gearfit'
+    state: 'home'
   action:
     - service: mqtt.publish
       data:
@@ -47,8 +51,12 @@
         retain: true
 - alias: HASwitchPlate_Jackie_Home
   trigger:
-    platform: state
-    entity_id: device_tracker.jackies_gearfit
+    platform: time
+    # Matches every minute
+    seconds: 30
+  condition:
+  - condition: state
+    entity_id: 'device_tracker.jackies_gearfit'
     state: 'home'
   action:
     - service: mqtt.publish
