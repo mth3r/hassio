@@ -5,3 +5,4 @@ switches:
   entities:
     - group.Switch_group
     - group.security_lights
+    - group.heating

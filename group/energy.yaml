@@ -3,3 +3,4 @@ energy:
   entities:
     - sensor.volts
     - sensor.energy
+    - sensor.power

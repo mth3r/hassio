@@ -1,5 +1,5 @@
-climate:
-  name: Climate
+weather:
+  name: Weather
   entities:
     - sensor.netatmo_main_level_temperature
     - sensor.netatmo_outdoor_temperature

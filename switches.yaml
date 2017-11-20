@@ -1,4 +1,44 @@
   - platform: mqtt
+    name: "Kitchen Zone"
+    state_topic: "ha/Kitchen Zone"
+    command_topic: "ha/Kitchen Zone"
+    qos: 0
+    payload_on: "ON"
+    payload_off: "OFF"
+    optimistic:
+    false retain: true
+
+  - platform: mqtt
+    name: "Main Level Zone"
+    state_topic: "ha/Main Level Zone"
+    command_topic: "ha/Main Level Zone"
+    qos: 0
+    payload_on: "ON"
+    payload_off: "OFF"
+    optimistic:
+    false retain: true
+
+  - platform: mqtt
+    name: "Upstairs Zone"
+    state_topic: "ha/Upstairs Zone"
+    command_topic: "ha/Upstairs Zone"
+    qos: 0
+    payload_on: "ON"
+    payload_off: "OFF"
+    optimistic:
+    false retain: true
+
+  - platform: mqtt
+    name: "Basement Zone"
+    state_topic: "ha/basement Zone"
+    command_topic: "ha/basement Zone"
+    qos: 0
+    payload_on: "ON"
+    payload_off: "OFF"
+    optimistic:
+    false retain: true
+
+  - platform: mqtt
     name: "Sunroom"
     state_topic: "smartthings/Sunroom/switch"
     command_topic: "smartthings/Sunroom/switch"

@@ -1,0 +1,47 @@
+  - platform: generic_thermostat
+    name: Main Level
+    heater: switch.Main_Level_Zone
+    target_sensor: sensor.netatmo_main_level_temperature
+    min_temp: 68
+    max_temp: 70
+    target_temp: 69
+    cold_tolerance: 0.3
+    hot_tolerance: 0
+    min_cycle_duration:
+      seconds: 60
+
+  - platform: generic_thermostat
+    name: Basement
+    heater: switch.basement_zone
+    target_sensor: sensor.inside_garage_temp
+    min_temp: 68
+    max_temp: 70
+    target_temp: 69
+    cold_tolerance: 0.3
+    hot_tolerance: 0
+    min_cycle_duration:
+      seconds: 60
+
+  - platform: generic_thermostat
+    name: Upstairs
+    heater: switch.upstairs_zone
+    target_sensor: sensor.netatmo_main_level_temperature
+    min_temp: 68
+    max_temp: 70
+    target_temp: 69
+    cold_tolerance: 0.3
+    hot_tolerance: 0
+    min_cycle_duration:
+      seconds: 60
+
+  - platform: generic_thermostat
+    name: Kitchen
+    heater: switch.kitchen_zone
+    target_sensor: sensor.netatmo_main_level_temperature
+    min_temp: 68
+    max_temp: 70
+    target_temp: 69
+    cold_tolerance: 0.3
+    hot_tolerance: 0
+    min_cycle_duration:
+      seconds: 60

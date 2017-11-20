@@ -1,0 +1,11 @@
+heating:
+  name: Heating
+  entities:
+    - switch.Main_Level_Zone
+    - switch.kitchen_zone
+    - switch.upstairs_zone
+    - switch.basement_zone
+    - climate.Main_Level_Zone
+    - climate.kitchen_zone
+    - climate.upstairs_zone
+    - climate.basement_zone

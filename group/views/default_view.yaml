@@ -10,6 +10,7 @@ default_view:
     - device_tracker.alicehertzsipod
     - group.garage_door_mom
     - group.garage_door_dad
-    - group.climate
+    - group.weather
     - group.energy
     - group.Motion
+    - sensor.basement_garage_door

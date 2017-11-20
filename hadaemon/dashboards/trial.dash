@@ -1,0 +1,31 @@
+title: Main Panel
+widget_dimensions: [120, 120]
+widget_size: [1, 1]
+widget_margins: [5, 5]
+columns: 8
+global_parameters:
+  use_comma: 0
+  precision: 1
+  use_hass_icon: 1
+
+garage_mom:
+  widget_type: switch
+  title: Garage
+  entity: cover.garage_door_opener_right
+  icon_on: fa-car
+  icon_off: fa-car
+  warn: 1
+
+garage_dad:
+  widget_type: switch
+  title: Garage
+  entity: cover.garage_door_opener
+  icon_on: fa-car
+  icon_off: fa-car
+  warn: 1
+
+
+layout:
+    - switch.piano_front, switch.piano_back, switch.kitchen_front, switch.kitchen_back
+    - clock.clock(2x1), sensor.dark_sky_daily_high_temperature
+    - garage_dad(2x2), garage_mom(2x2)

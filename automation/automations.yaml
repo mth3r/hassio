@@ -15,15 +15,7 @@
           name: Garage_Doors
           message: Doors Opened longer than 5 min
 
-      #- service_template: >
-      #   {% set hour=states("sensor.time").split(':')[0] | int %}
-      #   {% if hour >= 7 and hour <= 9 and states.input_boolean.school_mode.state == 'on'%}
-      #     input_boolean.turn_off
-      #   {% else %}
-      #      input_boolean.turn_on
-      #   {% endif %}
-      #  entity_id: input_boolean.alert_mode
-  - alias: 'Baseement Garage Door Log'
+  - alias: 'Basement Garage Door Log'
 
     trigger:
       - platform: state
@@ -32,6 +24,22 @@
         from: 'closed'
         to: 'open'
         for: '00:00:45'
+    action:
+      - service: logbook.log
+        data_template:
+          name: Basement Garage Door
+          message: Door Opened longer than 45 seconds
+
+
+      #- service_template: >
+      #   {% set hour=states("sensor.time").split(':')[0] | int %}
+      #   {% if hour >= 7 and hour <= 9 and states.input_boolean.school_mode.state == 'on'%}
+      #     input_boolean.turn_off
+      #   {% else %}
+      #      input_boolean.turn_on
+      #   {% endif %}
+      #  entity_id: input_boolean.alert_mode
+
 
     action:
       - service: logbook.log

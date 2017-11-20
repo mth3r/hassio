@@ -204,3 +204,4 @@ switch: !include switches.yaml
 history: !include history.yaml
 logbook: !include logbook.yaml
 scene: !include_dir_merge_list scenes/
+climate: !include climate.yaml
