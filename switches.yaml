@@ -1,42 +1,46 @@
   - platform: mqtt
     name: "Kitchen Zone"
-    state_topic: "ha/Kitchen Zone"
-    command_topic: "ha/Kitchen Zone"
+    state_topic: "homeassistant/hzHeating/kitchen_zone"
+    command_topic: "homeassistant/hzHeating/kitchen_zone"
     qos: 0
     payload_on: "ON"
+    optimistic: false
     payload_off: "OFF"
-    optimistic:
-    false retain: true
+    retain: true
+    icon: mdi:thermometer-lines
 
   - platform: mqtt
     name: "Main Level Zone"
-    state_topic: "ha/Main Level Zone"
-    command_topic: "ha/Main Level Zone"
+    state_topic: "homeassistant/hzHeating/main_level_zone"
+    command_topic: "homeassistant/hzHeating/main_level_zone"
     qos: 0
     payload_on: "ON"
+    optimistic: false
     payload_off: "OFF"
-    optimistic:
-    false retain: true
+    retain: true
+    icon: mdi:thermometer-lines
 
   - platform: mqtt
     name: "Upstairs Zone"
-    state_topic: "ha/Upstairs Zone"
-    command_topic: "ha/Upstairs Zone"
+    state_topic: "homeassistant/hzHeating/upstairs_zone"
+    command_topic: "homeassistant/hzHeating/upstairs_zone"
     qos: 0
     payload_on: "ON"
     payload_off: "OFF"
-    optimistic:
-    false retain: true
+    optimistic: false
+    retain: true
+    icon: mdi:thermometer-lines
 
   - platform: mqtt
     name: "Basement Zone"
-    state_topic: "ha/basement Zone"
-    command_topic: "ha/basement Zone"
+    state_topic: "homeassistant/hzHeating/basement_zone"
+    command_topic: "homeassistant/hzHeating/basement_zone"
     qos: 0
     payload_on: "ON"
     payload_off: "OFF"
-    optimistic:
-    false retain: true
+    optimistic: false
+    retain: true
+    icon: mdi:thermometer-lines
 
   - platform: mqtt
     name: "Sunroom"

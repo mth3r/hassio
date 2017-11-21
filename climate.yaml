@@ -25,7 +25,7 @@
   - platform: generic_thermostat
     name: Upstairs
     heater: switch.upstairs_zone
-    target_sensor: sensor.netatmo_main_level_temperature
+    target_sensor: sensor.garage_temp
     min_temp: 68
     max_temp: 70
     target_temp: 69
@@ -37,7 +37,7 @@
   - platform: generic_thermostat
     name: Kitchen
     heater: switch.kitchen_zone
-    target_sensor: sensor.netatmo_main_level_temperature
+    target_sensor: sensor.office_temp
     min_temp: 68
     max_temp: 70
     target_temp: 69
