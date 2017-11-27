@@ -60,6 +60,16 @@
     payload_off: "off"
     retain: true
 
+
+  - platform: mqtt
+    name: "sonoff1"
+    state_topic: "homeassistant/sonoff/sonoff1"
+    command_topic: "homeassistant/sonoff/sonoff1"
+    show_last_changed: true
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
   - platform: mqtt
     name: "Piano Front"
     state_topic: "smartthings/Piano Room Front/switch"

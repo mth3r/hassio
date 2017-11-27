@@ -8,31 +8,31 @@
     cold_tolerance: 0.3
     hot_tolerance: 0
     min_cycle_duration:
-      seconds: 60
+      seconds: 120
 
   - platform: generic_thermostat
     name: Basement
     heater: switch.basement_zone
-    target_sensor: sensor.inside_garage_temp
-    min_temp: 68
+    target_sensor: sensor.isaacs_room_temp
+    min_temp: 63
     max_temp: 70
-    target_temp: 69
+    target_temp: 62
     cold_tolerance: 0.3
     hot_tolerance: 0
     min_cycle_duration:
-      seconds: 60
+      seconds: 120
 
   - platform: generic_thermostat
     name: Upstairs
     heater: switch.upstairs_zone
-    target_sensor: sensor.garage_temp
-    min_temp: 68
+    target_sensor: sensor.upstairs_temp
+    min_temp: 64
     max_temp: 70
-    target_temp: 69
+    target_temp: 66
     cold_tolerance: 0.3
     hot_tolerance: 0
     min_cycle_duration:
-      seconds: 60
+      seconds: 120
 
   - platform: generic_thermostat
     name: Kitchen
@@ -44,4 +44,4 @@
     cold_tolerance: 0.3
     hot_tolerance: 0
     min_cycle_duration:
-      seconds: 60
+      seconds: 120

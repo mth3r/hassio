@@ -10,3 +10,4 @@ switch_group:
     - switch.jackie_bedroom
     - switch.Basement_Switch
     - switch.Dining_Room
+    - switch.sonoff1

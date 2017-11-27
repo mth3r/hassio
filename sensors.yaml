@@ -34,6 +34,35 @@
 
 
   - platform: mqtt
+    name: Isaac's Room_temp
+    state_topic: "homeassistant/hzTemp/dht22_basement/temperature"
+    device_class: temperature
+    unit_of_measurement: "°F"
+    retain: true
+    icon: mdi:thermometer
+
+  - platform: mqtt
+    name: Isaac's Room_Humidity
+    state_topic: "homeassistant/hzTemp/dht22_basement/humidity"
+    unit_of_measurement: "%"
+    retain: true
+
+  - platform: mqtt
+    name: upstairs_temp
+    state_topic: "homeassistant/hzTemp/dht22_upstairs/temperature"
+    device_class: temperature
+    unit_of_measurement: "°F"
+    retain: true
+    icon: mdi:thermometer
+
+  - platform: mqtt
+    name: upstairs_Humidity
+    state_topic: "homeassistant/hzTemp/dht22_upstairs/humidity"
+    unit_of_measurement: "%"
+    retain: true
+
+
+  - platform: mqtt
     name: Inside Garage Temp
     state_topic: "smartthings/basement_garage_door/temperature"
     device_class: temperature
