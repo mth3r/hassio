@@ -1,0 +1,11 @@
+Relays:
+  name: Relays
+  entities:
+    - switch.Relay_1
+    - switch.Relay_2
+    - switch.Relay_3
+    - switch.Relay_4
+    - switch.Relay_5
+    - switch.Relay_6
+    - switch.Relay_7
+    - switch.Relay_8

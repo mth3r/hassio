@@ -15,6 +15,8 @@
           name: Garage_Doors
           message: Doors Opened longer than 5 min
 
+
+
   - alias: 'Basement Garage Door Log'
 
     trigger:
@@ -24,11 +26,27 @@
         from: 'closed'
         to: 'open'
         for: '00:00:45'
+
     action:
       - service: logbook.log
         data_template:
           name: Basement Garage Door
-          message: Door Opened longer than 45 seconds
+          message: Doors Opened longer than 45 seconds
+      #- service: notify.my_pushbullet
+      #  data_template:
+      #    title: "Door Open Alert"
+      #    message: "The Door has been open for longer than 45 seconds. Temperature in Garage is {{states('sensor.garage_temp')}}. Temperature inside is {{states('sensor.inside_garage_temp')}}"
+      #- service: notify.my_twilio
+      #  data:
+      #    message: "The Door has been open for longer than 45 seconds. Temperature in Garage is {{states('sensor.garage_temp')}}. Temperature inside is {{states('sensor.inside_garage_temp')}}"
+      #    target:
+      #      - !secret twilio_toby
+      #      - !secret twilio_mlu
+      - service: notify.AWS_SNS
+        data:
+          message: "The Door has been open for longer than 45 seconds. Temperature in Garage is {{states('sensor.garage_temp')}}. Temperature inside is {{states('sensor.inside_garage_temp')}}"
+          target: !secret aws_target
+
 
 
       #- service_template: >
@@ -39,18 +57,6 @@
       #      input_boolean.turn_on
       #   {% endif %}
       #  entity_id: input_boolean.alert_mode
-
-
-    action:
-      - service: logbook.log
-        data_template:
-          name: Basement Garage Door
-          message: Doors Opened longer than 45 seconds
-      - service: notify.my_pushbullet
-        data_template:
-          title: "Door Open Alert"
-          message: "The Door has been open for longer than 45 seconds. Temperature in Garage is {{states('sensor.garage_temp')}}. Temperature inside is {{states('sensor.inside_garage_temp')}}"
-
 
   - alias: 'Office Motion'
     trigger:

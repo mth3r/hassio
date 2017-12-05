@@ -6,3 +6,4 @@ switches:
     - group.Switch_group
     - group.security_lights
     - group.heating
+    - group.Relays

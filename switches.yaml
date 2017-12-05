@@ -71,6 +71,72 @@
     retain: true
 
   - platform: mqtt
+    name: "Relay 1"
+    state_topic: "homeassistant/Eight_Relay/Relay_1"
+    command_topic: "homeassistant/Eight_Relay/Relay_1"
+    show_last_changed: true
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  - platform: mqtt
+    name: "Relay 2"
+    state_topic: "homeassistant/Eight_Relay/Relay_2"
+    command_topic: "homeassistant/Eight_Relay/Relay_2"
+    show_last_changed: true
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  - platform: mqtt
+    name: "Relay 3"
+    state_topic: "homeassistant/Eight_Relay/Relay_3"
+    command_topic: "homeassistant/Eight_Relay/Relay_3"
+    show_last_changed: true
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  - platform: mqtt
+    name: "Relay 4"
+    state_topic: "homeassistant/Eight_Relay/Relay_4"
+    command_topic: "homeassistant/Eight_Relay/Relay_4"
+    show_last_changed: true
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  - platform: mqtt
+    name: "Relay 5"
+    state_topic: "homeassistant/Eight_Relay/Relay_5"
+    command_topic: "homeassistant/Eight_Relay/Relay_5"
+    show_last_changed: true
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  - platform: mqtt
+    name: "Relay 6"
+    state_topic: "homeassistant/Eight_Relay/Relay_6"
+    command_topic: "homeassistant/Eight_Relay/Relay_6"
+    show_last_changed: true
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  - platform: mqtt
+    name: "Relay 7"
+    state_topic: "homeassistant/Eight_Relay/Relay_7"
+    command_topic: "homeassistant/Eight_Relay/Relay_7"
+    show_last_changed: true
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  - platform: mqtt
+    name: "Relay 8"
+    state_topic: "homeassistant/Eight_Relay/Relay_8"
+    command_topic: "homeassistant/Eight_Relay/Relay_8"
+    show_last_changed: true
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+
+  - platform: mqtt
     name: "Piano Front"
     state_topic: "smartthings/Piano Room Front/switch"
     command_topic: "smartthings/Piano Room Back/switch"

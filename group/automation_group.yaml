@@ -10,3 +10,4 @@ automation_group:
     - automation.Sunrise_Trigger
     - automation.Sunset_Trigger
     - automation.Goodnight_Trigger
+    - automation.basement_garage_door_log

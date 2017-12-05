@@ -91,20 +91,41 @@ media_player:
   - platform: spotify
     client_id: !secret spotify_client_ID
     client_secret: !secret spotify_client_secret
+  - platform: onkyo
+    host: !secret onkyo_ip
+    name: receiver
+    sources:
+      video1: 'HTPC'
+twilio:
+  account_sid: !secret twilio_account_sid
+  auth_token: !secret twilio_auth_token
 
 notify:
   - name: my_pushbullet
     platform: pushbullet
     api_key: !secret pushbullet_key
 
+  - name: my_twilio
+    platform: twilio_sms
+    from_number: !secret twilio_number
+
+  - name: AWS_SNS
+    platform: aws_sns
+    aws_access_key_id: !secret aws_access_key_id
+    aws_secret_access_key: !secret aws_secret_access_key
+    region_name: 'us-east-1'
+
+
 google_assistant:
   project_id: hertz-automation
   client_id: !secret Google_Assistant_ClientID
   access_token: !secret Google_Assistant_access_token
+  api_key: !secret Google_Assistant_api_key
   exposed_domains:
     - switch
     - light
     - cover
+    - media_player
 
 
 #microsoft_face:
@@ -205,3 +226,4 @@ history: !include history.yaml
 logbook: !include logbook.yaml
 scene: !include_dir_merge_list scenes/
 climate: !include climate.yaml
+light: !include lights.yaml

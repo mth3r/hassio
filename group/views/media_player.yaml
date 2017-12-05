@@ -4,6 +4,8 @@ media_player:
   icon: mdi:music
   entities:
     - media_player.home_group
+    - media_player.receiver
+    - media_player.samsung_6_series_55_un55mu6290
     - media_player.family_room_home
     - media_player.living_room_home
     - media_player.office_home
